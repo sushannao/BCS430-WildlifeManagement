@@ -11,4 +11,25 @@
             fx:controller="com.example.bcs430wildlifemanagement.inventory.InventoryController"
             prefHeight="400.0" prefWidth="600.0">
 
+    <VBox spacing="8" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+
+        <Label text="Inventory" />
+
+        <TableView fx:id="table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" />
+                <TableColumn fx:id="categoryColumn" text="Category" />
+                <TableColumn fx:id="quantityColumn" text="Qty" />
+                <TableColumn fx:id="unitColumn" text="Unit" />
+                <TableColumn fx:id="locationColumn" text="Location" />
+            </columns>
+        </TableView>
+
+        <HBox spacing="8">
+            <Button text="Request Restock" onAction="#invRequestSelected"/>
+            <Button text="Views Requests" onAction="#invViewRequests"/>
+        </HBox>
+    </VBox>
+
+
 </AnchorPane>
