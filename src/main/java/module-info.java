@@ -19,7 +19,8 @@ module com.example.bcs430wildlifemanagement {
     requires java.net.http;
     requires com.google.api.services.storage;
 
-
+    opens com.example.bcs430wildlifemanagement.inventory to javafx.fxml;
+    exports com.example.bcs430wildlifemanagement.inventory;
     opens com.example.bcs430wildlifemanagement to javafx.fxml;
     exports com.example.bcs430wildlifemanagement.view;
     opens com.example.bcs430wildlifemanagement.view to javafx.fxml;
