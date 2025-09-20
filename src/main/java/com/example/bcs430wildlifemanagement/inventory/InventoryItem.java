@@ -7,7 +7,7 @@ public class InventoryItem {
     private String name;
     private int quantity;
     private Category category;
-    private int lowStock; // this will be what is used to check if we need to refill the inventory stokc
+    private int lowStock; // if the quantity goes below the assigneed number then it will be considered low stock
     private String unit;
     private String location;
     private String notes;
