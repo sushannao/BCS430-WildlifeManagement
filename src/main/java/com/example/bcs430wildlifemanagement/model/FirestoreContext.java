@@ -6,16 +6,21 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class FirestoreContext {
 
-    public Firestore firebase() {
-        try {
-            FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setCredentials(GoogleCredentials.fromStream(getClass().getResourceAsStream("/com/example/bcs430wildlifemanagement/key.json")))
-                    .build();
-            FirebaseApp.initializeApp(options);
-            System.out.println("Firebase is initialized");
+    public static Firestore firebase() {
+        try (InputStream input = FirestoreContext.class.getResourceAsStream("/key.json")) {
+            if (input ==null) throw new IllegalStateException("Key file not found");
+            if (FirebaseApp.getApps().isEmpty()) {
+                FirebaseOptions options = FirebaseOptions.builder()
+                        .setCredentials(GoogleCredentials.fromStream(input))
+                        .build();
+                FirebaseApp.initializeApp(options);
+                System.out.println("Firebase is initialized");
+            }
+            return FirestoreClient.getFirestore();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
