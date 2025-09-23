@@ -39,7 +39,7 @@ public class SettingsController {
 
 
     public void logoutButton(ActionEvent actionEvent) throws IOException {
-        App.setRoot("/files/Login.fxml");
+        App.setRoot("/com/example/bcs430wildlifemanagement/Login.fxml");
     }
 
     public void updateButton(ActionEvent actionEvent) throws IOException, FirebaseAuthException {
