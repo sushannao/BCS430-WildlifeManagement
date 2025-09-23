@@ -2,6 +2,9 @@ package com.example.bcs430wildlifemanagement.view;
 
 import com.example.bcs430wildlifemanagement.model.App;
 import com.example.bcs430wildlifemanagement.model.UserSession;
+import com.google.api.client.json.Json;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -60,7 +63,7 @@ public class LoginController {
         }
     }
 
-    public void registerButton(ActionEvent actionEvent) throws IOException {
+    public void registerPageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Register.fxml");
     }
 

@@ -18,6 +18,7 @@ module com.example.bcs430wildlifemanagement {
     requires com.google.gson;
     requires java.net.http;
     requires com.google.api.services.storage;
+    requires com.google.api.client;
 
     opens com.example.bcs430wildlifemanagement.inventory to javafx.fxml;
     exports com.example.bcs430wildlifemanagement.inventory;
