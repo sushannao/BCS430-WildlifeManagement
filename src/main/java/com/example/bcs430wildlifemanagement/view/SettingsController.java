@@ -84,7 +84,7 @@ public class SettingsController {
 
 
 
-                                                                      // TODO: changing passwords:
+    /* // TODO: changing passwords:
     String password = currentPasswordField.getText();
     String newPassword = newPasswordField.getText();
     String confirmNewPassword = confirmNewPasswordField.getText();
@@ -102,6 +102,6 @@ public class SettingsController {
             return null;
         }
     }
-    private static final String apiKey = getApiKey();
+    private static final String apiKey = getApiKey(); */
 
 }

@@ -17,7 +17,6 @@ public class HomeController {
         welcomeLabel.setText("Welcome " + username + "!");
     }
 
-
     public void SettingsButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Settings.fxml");
     }
