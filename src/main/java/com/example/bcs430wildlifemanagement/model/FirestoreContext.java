@@ -8,11 +8,12 @@ import com.google.firebase.cloud.FirestoreClient;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class FirestoreContext {
+import static com.example.bcs430wildlifemanagement.model.App.fstore;
 
+public class FirestoreContext {
     public static Firestore firebase() {
         try (InputStream input = FirestoreContext.class.getResourceAsStream("/key.json")) {
-            if (input ==null) throw new IllegalStateException("Key file not found");
+            if (input == null) throw new IllegalStateException("Key file not found");
             if (FirebaseApp.getApps().isEmpty()) {
                 FirebaseOptions options = FirebaseOptions.builder()
                         .setCredentials(GoogleCredentials.fromStream(input))
@@ -27,4 +28,3 @@ public class FirestoreContext {
         return FirestoreClient.getFirestore();
     }
 }
-
