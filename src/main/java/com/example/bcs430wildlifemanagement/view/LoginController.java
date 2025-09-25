@@ -2,9 +2,10 @@ package com.example.bcs430wildlifemanagement.view;
 
 import com.example.bcs430wildlifemanagement.model.App;
 import com.example.bcs430wildlifemanagement.model.UserSession;
-import com.google.api.client.json.Json;
-import com.google.gson.Gson;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseToken;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -21,9 +22,13 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class LoginController {
-    @FXML private TextField emailField;
-    @FXML private PasswordField passwordField;
-    @FXML private Label errorLabel;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private PasswordField passwordField;
+    @FXML
+    private Label errorLabel;
+    private String uid;
 
     public static String getApiKey() {
         Properties prop = new Properties();
@@ -52,6 +57,7 @@ public class LoginController {
             boolean success = authenticateUser(email, password);
             if (success) {
                 UserSession.setEmail(email);
+                UserSession.setUid(uid);
                 System.out.println("Login successful!");
                 App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
             } else {
@@ -103,13 +109,21 @@ public class LoginController {
 
             System.out.println("Login response: " + response.toString());
 
-            return code == 200;
-
+            if (code == 200) {
+                JsonObject obj = JsonParser.parseString(response.toString()).getAsJsonObject();
+                String idToken = obj.get("idToken").getAsString();
+                FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(idToken);
+                this.uid = decodedToken.getUid();
+                return true;
+            } else {
+                errorLabel.setText("Login failed. Try again.");
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            errorLabel.setText("Login failed. Try again.");
+            System.out.println("Login failed.");
             return false;
         }
+        return false;
     }
     @FXML
     private void contactAdminPopUp(ActionEvent event) {

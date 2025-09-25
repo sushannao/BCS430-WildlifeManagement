@@ -1,42 +1,38 @@
 package com.example.bcs430wildlifemanagement.view;
 
 import com.example.bcs430wildlifemanagement.model.App;
-import com.example.bcs430wildlifemanagement.view.RegisterController;
+import com.example.bcs430wildlifemanagement.model.UserSession;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
 import com.google.firebase.cloud.FirestoreClient;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
-import javax.swing.text.html.ImageView;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Properties;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 
 public class SettingsController {
     @FXML private TextField emailField;
     @FXML private TextField phoneNumField;
-    @FXML private TextField skillsField;
-    @FXML private TextField limitsField;
+    @FXML private TextArea skillsField;
+    @FXML private TextArea limitsField;
     @FXML private Label errorLabel;
 
-    @FXML private TextField currentPasswordField;
-    @FXML private TextField newPasswordField;
-    @FXML private TextField confirmNewPasswordField;
+    @FXML private PasswordField currentPasswordField;
+    @FXML private PasswordField newPasswordField;
+    @FXML private PasswordField confirmNewPasswordField;
 
-    private String uid;
-
+    String uid = UserSession.getUid();
 
     public void logoutButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Login.fxml");
@@ -48,11 +44,19 @@ public class SettingsController {
         String newSkills = skillsField.getText();
         String newLimits = limitsField.getText();
 
+        if (uid == null) {
+            errorLabel.setText("Can't find user. Log out and log back in.");
+            return;
+        }
+        if (!newEmail.isEmpty()) {
+            UserRecord.UpdateRequest rq = new UserRecord.UpdateRequest(uid).setEmail(newEmail);
+            FirebaseAuth.getInstance().updateUser(rq);
+        }
+
         Firestore db = FirestoreClient.getFirestore();
         DocumentReference docRef = db.collection("users").document(uid);
 
         Map<String, Object> update = new HashMap<>();
-        update.put("email", newEmail);
         update.put("phoneNumber", newPhoneNum);
         update.put("skills", newSkills);
         update.put("limitations", newLimits);
@@ -65,14 +69,6 @@ public class SettingsController {
             e.printStackTrace();
             errorLabel.setText("Update Failed. Try again or contact Admin.");
         }
-
-
-        UserRecord.UpdateRequest request = new UserRecord.UpdateRequest(uid);
-
-
-        UserRecord userRecord = FirebaseAuth.getInstance().updateUser(request);
-        System.out.println("Successfully updated user: " + userRecord.getUid());
-
     }
     @FXML private void contactAdminPopUp(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -82,12 +78,73 @@ public class SettingsController {
         alert.showAndWait();
     }
 
+    public static String getIdToken (String email, String password) throws IOException {
+        URL url = new URL("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiKey);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setDoOutput(true);
 
-    /* // TODO: changing passwords:
-    String password = currentPasswordField.getText();
-    String newPassword = newPasswordField.getText();
-    String confirmNewPassword = confirmNewPasswordField.getText();
+        String jsonInputString = String.format(
+                "{\"email\":\"%s\",\"password\":\"%s\",\"returnSecureToken\":true}",
+                email, password
+        );
+
+        try (OutputStream os = conn.getOutputStream()) {
+            byte[] input = jsonInputString.getBytes("utf-8");
+            os.write(input, 0, input.length);
+        }
+        if (conn.getResponseCode() == 200) {
+            try (InputStream is = conn.getInputStream();
+                 InputStreamReader isr = new InputStreamReader(is, "utf-8");
+                 BufferedReader br = new BufferedReader(isr)) {
+
+                StringBuilder response = new StringBuilder();
+                String line;
+                     while ((line = br.readLine()) != null) {
+                    response.append(line);
+                }
+                JsonObject obj = JsonParser.parseString(response.toString()).getAsJsonObject();
+                return obj.get("idToken").getAsString();
+            }
+        } else {
+            try (InputStream is = conn.getErrorStream();
+                 Scanner scanner = new Scanner(is, "utf-8")) {
+                StringBuilder error = new StringBuilder();
+                while (scanner.hasNextLine()) {
+                    error.append(scanner.nextLine());
+                }
+                System.out.println("Error" + error);
+            }
+            return null;
+        }
+    }
+
+    public void changePasswordButton(ActionEvent actionEvent) throws IOException {
+        String password = currentPasswordField.getText();
+        String newPassword = newPasswordField.getText();
+        String confirmNewPassword = confirmNewPasswordField.getText();
+
+        if (!newPassword.equals(confirmNewPassword)) {
+            errorLabel.setText("New passwords do not match.");
+            return;
+        }
+        if (password.isEmpty() || newPassword.isEmpty() || confirmNewPassword.isEmpty()) {
+            errorLabel.setText("Fill out all fields to change passwords");
+            return;
+        }
+
+        String email = UserSession.getEmail();
+        String idToken = getIdToken(email, password);
+
+        if (idToken == null) {
+            errorLabel.setText("Current password is incorrect.");
+            return;
+        }
+        changePassword(idToken, newPassword);
+        errorLabel.setText("Successful change!");
+    }
 
 
     public static String getApiKey() {
@@ -102,6 +159,25 @@ public class SettingsController {
             return null;
         }
     }
-    private static final String apiKey = getApiKey(); */
+    private static final String apiKey = getApiKey();
 
+    public void changePassword(String idToken, String newPassword) throws IOException {
+        URL url = new URL("https://identitytoolkit.googleapis.com/v1/accounts:update?key=" + apiKey);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setDoOutput(true);
+
+        String jsonInputString = String.format("{\"idToken\":\"%s\",\"password\":\"%s\"}", idToken, newPassword);
+        try (OutputStream os = conn.getOutputStream()) {
+            byte[] input = jsonInputString.getBytes("utf-8");
+            os.write(input, 0, input.length);
+        }
+
+        if (conn.getResponseCode() == 200) {
+            System.out.println("Password changed successfully.");
+        } else {
+            System.out.println("Failed to change password.");
+        }
+    }
 }

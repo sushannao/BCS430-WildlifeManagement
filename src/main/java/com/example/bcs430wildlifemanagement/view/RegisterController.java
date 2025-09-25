@@ -2,13 +2,10 @@ package com.example.bcs430wildlifemanagement.view;
 
 import com.example.bcs430wildlifemanagement.model.App;
 import com.example.bcs430wildlifemanagement.model.FirestoreContext;
-import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.UserRecord;
 import com.google.firebase.cloud.FirestoreClient;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -24,8 +21,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
-
-import static com.example.bcs430wildlifemanagement.model.App.fstore;
 
 public class RegisterController {
     @FXML
@@ -115,7 +110,7 @@ public class RegisterController {
     }
 }
 
-    /*  private static final String apiKey = getApiKey();      // not needed for now TODO: fix this for client side
+    /*  private static final String apiKey = getApiKey(); // not needed for now TODO: fix this file for client side
 
         public static String getApiKey() {
         Properties prop = new Properties();
