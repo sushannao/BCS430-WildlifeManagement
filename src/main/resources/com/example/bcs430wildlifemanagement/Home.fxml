@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -23,37 +24,37 @@
                                 <Image url="@Images/Ecologic%20Icon%201.0.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="143.0" fitWidth="141.0" layoutX="1373.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="profileIcon" fitHeight="143.0" fitWidth="141.0" layoutX="1373.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@Images/Default%20User%20Icon.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="235.0" layoutY="118.0" text="Home" textFill="WHITE">
+                        <Label fx:id="homeLabel" layoutX="235.0" layoutY="118.0" text="Home" textFill="WHITE">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Label>
-                        <Label layoutX="396.0" layoutY="118.0" text="Animals" textFill="WHITE">
+                        <Label fx:id="animalLabel" layoutX="396.0" layoutY="118.0" text="Animals" textFill="WHITE">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Label>
-                        <Label layoutX="577.0" layoutY="118.0" text="Events" textFill="WHITE">
+                        <Label fx:id="eventsLabel" layoutX="577.0" layoutY="118.0" text="Events" textFill="WHITE">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Label>
-                        <Label layoutX="728.0" layoutY="118.0" text="Incidents" textFill="WHITE">
+                        <Label fx:id="incidentsLabel" layoutX="728.0" layoutY="118.0" text="Incidents" textFill="WHITE">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Label>
-                        <Label layoutX="925.0" layoutY="118.0" text="Map" textFill="WHITE">
+                        <Label fx:id="mapLabel" layoutX="925.0" layoutY="118.0" text="Map" textFill="WHITE">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Label>
-                        <Label layoutX="1043.0" layoutY="118.0" text="Admin" textFill="WHITE">
+                        <Label fx:id="adminLabel" layoutX="1043.0" layoutY="118.0" text="Admin" textFill="WHITE">
                             <font>
                                 <Font size="36.0" />
                             </font>
@@ -65,7 +66,7 @@
             <left>
                 <Pane prefHeight="340.0" prefWidth="115.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="489.0" fitWidth="112.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imageLeft" fitHeight="489.0" fitWidth="112.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/Crop%20Gray%20Wolf.jpg" />
                      </image>
@@ -75,7 +76,7 @@
             <right>
                 <Pane prefHeight="340.0" prefWidth="115.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="484.0" fitWidth="113.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imageRight" fitHeight="484.0" fitWidth="113.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/Crop%20Gray%20Wolf.jpg" />
                      </image>
@@ -85,11 +86,36 @@
             <bottom>
                 <Pane prefHeight="116.0" prefWidth="1600.0" style="-fx-background-color: #2E6F40;" BorderPane.alignment="CENTER">
                     <children>
-                        <Label layoutX="565.0" layoutY="32.0" text="Copyright 2025 Team Wildlife" textFill="WHITE">
+                        <Label fx:id="copyrightLabel" layoutX="462.0" layoutY="32.0" text="© 2025 Team Wildlife. All Rights Reserved." textFill="WHITE">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Label>
+                  <Label fx:id="teamNameLabel" layoutX="14.0" prefHeight="40.0" prefWidth="224.0" text="Team Wildlife" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addressPhoneNumberLabel" layoutX="14.0" layoutY="32.0" prefHeight="75.0" prefWidth="178.0" text="123 Rainforest Drive Manhattan, NY 10282 949.555.5555" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="contactUsHyperlink" layoutX="1399.0" layoutY="57.0" prefHeight="26.0" prefWidth="81.0" text="Contact Us" textFill="#f8f5f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="frequentlyAskedQuestionsHyperlink" layoutX="1399.0" layoutY="81.0" prefHeight="27.0" prefWidth="187.0" text="Frequently Asked Questions" textFill="#f8f5f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="aboutUsHyperlink" layoutX="1399.0" layoutY="32.0" prefHeight="26.0" prefWidth="71.0" text="About Us" textFill="#f8f5f5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
                     </children>
                 </Pane>
             </bottom>
@@ -100,20 +126,20 @@
                      <font>
                         <Font size="36.0" />
                      </font></Label>
-                  <Label fx:id="welcomeLabel1" layoutX="14.0" layoutY="54.0" text="The current time is: XX:XX">
+                  <Label fx:id="currentTimeLabel" layoutX="14.0" layoutY="54.0" text="The current time is: XX:XX">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Button layoutX="454.0" layoutY="68.0" mnemonicParsing="false" text="Clock in" />
-                  <Button layoutX="550.0" layoutY="68.0" mnemonicParsing="false" text="Clock out" />
-                  <Label fx:id="welcomeLabel11" layoutX="467.0" layoutY="107.0" prefHeight="27.0" prefWidth="140.0" text="Status: You are clocked in" />
-                  <Label fx:id="welcomeLabel12" layoutX="14.0" layoutY="134.0" text="Notifications:" textFill="RED">
+                  <Button fx:id="clockInButton" layoutX="454.0" layoutY="68.0" mnemonicParsing="false" text="Clock in" />
+                  <Button fx:id="clockOutButton" layoutX="550.0" layoutY="68.0" mnemonicParsing="false" text="Clock out" />
+                  <Label fx:id="statusLabel" layoutX="467.0" layoutY="107.0" prefHeight="27.0" prefWidth="140.0" text="Status: You are clocked in" />
+                  <Label fx:id="notificationLabel" layoutX="14.0" layoutY="134.0" text="Notifications:" textFill="RED">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="welcomeLabel13" layoutX="16.0" layoutY="187.0" text="Schedule for the week:">
+                  <Label fx:id="scheduleForWeekLabel" layoutX="16.0" layoutY="187.0" text="Schedule for the week:">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -134,27 +160,27 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Sunday" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="127.0" text="Monday" GridPane.columnIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="125.0" text="Tuesday" GridPane.columnIndex="2" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Wednesday" GridPane.columnIndex="3" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Thursday" GridPane.columnIndex="4" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Friday" GridPane.columnIndex="5" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="125.0" text="Saturday" GridPane.columnIndex="6" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Monday Time" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Monday Station" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Sunday Time" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Tuesday Time" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Wednesday Time" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Thursday Time" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Friday Time" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Saturday Time" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Sunday Station" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Tuesday Station" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Wednesday Station" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Thursday Station" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Friday Station" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Saturday Station" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <Label fx:id="sundayLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Sunday" />
+                        <Label fx:id="mondayLabel" alignment="CENTER" prefHeight="17.0" prefWidth="127.0" text="Monday" GridPane.columnIndex="1" />
+                        <Label fx:id="tuesdayLabel" alignment="CENTER" prefHeight="17.0" prefWidth="125.0" text="Tuesday" GridPane.columnIndex="2" />
+                        <Label fx:id="wednesdayLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Wednesday" GridPane.columnIndex="3" />
+                        <Label fx:id="thursdayLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Thursday" GridPane.columnIndex="4" />
+                        <Label fx:id="fridayLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Friday" GridPane.columnIndex="5" />
+                        <Label fx:id="saturdayLabel" alignment="CENTER" prefHeight="17.0" prefWidth="125.0" text="Saturday" GridPane.columnIndex="6" />
+                        <Label fx:id="mondayTimeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Monday Time" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="mondayStationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Monday Station" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="sundayTimeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Sunday Time" GridPane.rowIndex="1" />
+                        <Label fx:id="tuesdayTimeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Tuesday Time" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="wednesdayTimeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Wednesday Time" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label fx:id="thursdayTimeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Thursday Time" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label fx:id="fridayTimeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Friday Time" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label fx:id="saturdayTimeLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Saturday Time" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <Label fx:id="sundayStationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Sunday Station" GridPane.rowIndex="2" />
+                        <Label fx:id="tuesdayStationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Tuesday Station" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label fx:id="wednesdayStationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Wednesday Station" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label fx:id="thursdayStationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Thursday Station" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Label fx:id="fridayStationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Friday Station" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Label fx:id="saturdayStationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="126.0" text="Saturday Station" GridPane.columnIndex="6" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children></Pane>
