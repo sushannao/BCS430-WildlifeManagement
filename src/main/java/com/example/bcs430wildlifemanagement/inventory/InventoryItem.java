@@ -11,6 +11,7 @@ public class InventoryItem {
     private String unit;
     private String location;
     private String notes;
+    private String id;
 
     public InventoryItem(String name, Category category, int quantity, int lowStock, String unit, String location, String notes) {
         this.name = name;
@@ -62,6 +63,12 @@ public class InventoryItem {
     }
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 
 }

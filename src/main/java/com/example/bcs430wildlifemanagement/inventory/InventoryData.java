@@ -45,7 +45,9 @@ public class InventoryData {
                         String unit = java.util.Objects.toString(doc.get("unit"), "");
                         String location = java.util.Objects.toString(doc.get("location"), "");
                         String notes = java.util.Objects.toString(doc.get("notes"), "");
-                        fresh.add(new InventoryItem(name, category, quantity, lowStock, unit, location, notes));
+                        InventoryItem item = new InventoryItem(name, category, quantity, lowStock, unit, location, notes);
+                        item.setId(doc.getId());
+                        fresh.add(item);
                     } catch (Exception ex) {
                         System.err.println("error");
                     }
