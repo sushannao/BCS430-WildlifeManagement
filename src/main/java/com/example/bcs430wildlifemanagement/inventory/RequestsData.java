@@ -36,7 +36,7 @@ public class RequestsData {
                 for (DocumentSnapshot doc : snap.getDocuments()) {
                     try{
                         Timestamp time = doc.getTimestamp("created");
-                        if (time == null) time = doc.getTimestamp("Timestamp");
+                        if (time == null) time = doc.getTimestamp("Timestamp: ");
 
                         fresh.add(new ResupplyRequest(doc.getId(), Objects.toString(doc.get("itemId"), ""), Objects.toString(doc.get("itemName"), ""), toInt(doc.get("quantityRequested"), 0), Objects.toString(doc.get("unit"), ""), Objects.toString(doc.get("notes"), ""), Objects.toString(doc.get("requesterName"), ""), Objects.toString(doc.get("requestedEmail"), ""), time));
                     } catch (Exception ignore) {
