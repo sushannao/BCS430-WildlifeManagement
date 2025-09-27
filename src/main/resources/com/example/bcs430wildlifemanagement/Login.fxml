@@ -28,9 +28,9 @@
            <right>
                <AnchorPane prefHeight="745.0" prefWidth="662.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
                    <children>
-                       <ImageView fitHeight="301.0" fitWidth="632.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                       <ImageView fitHeight="253.0" fitWidth="265.0" layoutX="191.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                               <Image url="@Images/Ecologic%20Icon%201.0.png" />
+                               <Image url="@Images/logoconcept.png" />
                            </image>
                        </ImageView>
                        <Label layoutX="80.0" layoutY="281.0" text="Email Address:">
