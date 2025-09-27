@@ -11,51 +11,62 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <AnchorPane prefHeight="407.0" prefWidth="228.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="546.0" fitWidth="600.0" layoutX="-170.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: black;">
-               <image>
-                  <Image url="@Images/Asian%20Small-clawed%20Otter.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </left>
-   <right>
-      <AnchorPane prefHeight="400.0" prefWidth="332.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="124.0" fitWidth="261.0" layoutX="36.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/Ecologic%20Icon%201.0.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="24.0" layoutY="127.0" text="Email Address:">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="usernameTextField" layoutX="119.0" layoutY="124.0" prefHeight="26.0" prefWidth="173.0" promptText="Email Address" />
-            <Label layoutX="29.0" layoutY="180.0" text="Password:">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="enterPasswordField" layoutX="119.0" layoutY="176.0" prefHeight="26.0" prefWidth="173.0" promptText="Password" />
-            <Button fx:id="loginButton" layoutX="29.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="275.0" style="-fx-background-color: #4F7942;" text="Login" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <Hyperlink fx:id="notregisteredHyperLink" layoutX="66.0" layoutY="288.0" prefWidth="224.0" text="Not Registered? Click Here to Create An Account." textAlignment="CENTER" wrapText="true" />
-            <Hyperlink fx:id="contactadminHyperLink" layoutX="66.0" layoutY="336.0" prefWidth="224.0" text="Forgot Password? Click Here to Contact An Admin." textAlignment="CENTER" wrapText="true" />
-            <Label alignment="CENTER" layoutX="23.0" layoutY="218.0" prefHeight="19.0" prefWidth="289.0" text="Invalid Login. Please try again." textAlignment="CENTER" textFill="#f23e3e">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </right>
-</BorderPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+           <left>
+               <AnchorPane prefHeight="407.0" prefWidth="228.0" BorderPane.alignment="CENTER">
+                   <children>
+                       <ImageView fitHeight="873.0" fitWidth="780.0" layoutX="-133.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: black;">
+                           <image>
+                               <Image url="@Images/Asian%20Small-clawed%20Otter%20-%20Crop.jpg" />
+                           </image>
+                       </ImageView>
+                   </children>
+               </AnchorPane>
+           </left>
+           <right>
+               <AnchorPane prefHeight="745.0" prefWidth="662.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
+                   <children>
+                       <ImageView fitHeight="301.0" fitWidth="632.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@Images/Ecologic%20Icon%201.0.png" />
+                           </image>
+                       </ImageView>
+                       <Label layoutX="80.0" layoutY="281.0" text="Email Address:">
+                           <font>
+                               <Font size="24.0" />
+                           </font>
+                       </Label>
+                       <TextField fx:id="usernameTextField" layoutX="256.0" layoutY="286.0" prefHeight="26.0" prefWidth="323.0" promptText="Email Address" />
+                       <Label layoutX="80.0" layoutY="341.0" text="Password:">
+                           <font>
+                               <Font size="24.0" />
+                           </font>
+                       </Label>
+                       <PasswordField fx:id="enterPasswordField" layoutX="256.0" layoutY="346.0" prefHeight="26.0" prefWidth="322.0" promptText="Password" />
+                       <Button fx:id="loginButton" layoutX="86.0" layoutY="471.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="491.0" style="-fx-background-color: #4F7942;" text="Login" textFill="WHITE">
+                           <font>
+                               <Font size="24.0" />
+                           </font>
+                       </Button>
+                       <Hyperlink fx:id="notregisteredHyperLink" layoutX="195.0" layoutY="542.0" prefHeight="89.0" prefWidth="274.0" text="Not Registered? Click Here to Create An Account." textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Hyperlink>
+                       <Hyperlink fx:id="contactadminHyperLink" layoutX="204.0" layoutY="614.0" prefHeight="89.0" prefWidth="253.0" text="Forgot Password? Click Here to Contact An Admin." textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Hyperlink>
+                       <Label alignment="CENTER" layoutX="153.0" layoutY="407.0" prefHeight="35.0" prefWidth="329.0" text="Invalid Login. Please try again." textAlignment="CENTER" textFill="#f23e3e">
+                           <font>
+                               <Font size="24.0" />
+                           </font>
+                       </Label>
+                   </children>
+               </AnchorPane>
+           </right>
+       </BorderPane>
+
+   </children>
+</AnchorPane>
