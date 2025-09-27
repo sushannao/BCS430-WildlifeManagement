@@ -129,6 +129,7 @@
                      </image>
                   </ImageView>
                </children></Pane>
+
             </right>
             <bottom>
                 <Pane prefHeight="96.0" prefWidth="1280.0" style="-fx-background-color: #4f7942;" BorderPane.alignment="CENTER">
@@ -235,3 +236,4 @@
         </BorderPane>
     </children>
 </AnchorPane>
+
