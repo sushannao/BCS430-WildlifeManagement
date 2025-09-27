@@ -29,7 +29,7 @@
       </ImageView>
       <ImageView fitHeight="81.0" fitWidth="88.0" layoutX="1187.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Images/Default%20User%20Icon.png" />
+            <Image url="@Images/Default User Icon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="98.0" fitWidth="49.0" layoutX="1231.0" pickOnBounds="true" preserveRatio="true">
