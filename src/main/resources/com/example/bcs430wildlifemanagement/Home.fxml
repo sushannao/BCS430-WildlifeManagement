@@ -92,7 +92,7 @@
                             <font>
                                 <Font name="System Bold" size="25.0" />
                             </font></Button>
-                        <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
+                        <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" onAction="#SettingsButton" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
