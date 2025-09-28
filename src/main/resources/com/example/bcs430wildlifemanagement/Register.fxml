@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -10,8 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.view.RegisterController">
    <children>
        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
            <left>
@@ -28,7 +28,7 @@
            <right>
                <AnchorPane prefHeight="720.0" prefWidth="802.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
                    <children>
-                       <Label layoutX="305.0" layoutY="32.0" text="Registration">
+                       <Label layoutX="230.0" layoutY="30.0" text="EcoLogic Registration">
                            <font>
                                <Font size="36.0" />
                            </font>
@@ -38,38 +38,38 @@
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="firstnameTextField" layoutX="270.0" layoutY="111.0" prefHeight="25.0" prefWidth="483.0" promptText="First Name" />
+                       <TextField fx:id="fNameField" layoutX="270.0" layoutY="111.0" prefHeight="25.0" prefWidth="483.0" promptText="First Name" />
                        <Label layoutX="61.0" layoutY="152.0" text="Last Name:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="lastnameTextField" layoutX="270.0" layoutY="157.0" prefHeight="25.0" prefWidth="483.0" promptText="Last Name" />
+                       <TextField fx:id="lNameField" layoutX="270.0" layoutY="157.0" prefHeight="25.0" prefWidth="483.0" promptText="Last Name" />
                        <Label layoutX="61.0" layoutY="205.0" text="Email Address:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="emailaddressTextField" layoutX="270.0" layoutY="210.0" prefHeight="25.0" prefWidth="483.0" promptText="Email Address" />
+                       <TextField fx:id="confirmEmailField" layoutX="270.0" layoutY="210.0" prefHeight="25.0" prefWidth="483.0" promptText="Email Address" />
                        <Label layoutX="61.0" layoutY="252.0" text="Phone Number:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="phonenumberTextField" layoutX="270.0" layoutY="257.0" prefHeight="25.0" prefWidth="483.0" promptText="Phone Number" />
+                       <TextField fx:id="phoneNumField" layoutX="270.0" layoutY="257.0" prefHeight="25.0" prefWidth="483.0" promptText="Phone Number" />
                        <Label layoutX="61.0" layoutY="305.0" text="Password:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <PasswordField fx:id="passwordTextField" layoutX="270.0" layoutY="310.0" prefHeight="25.0" prefWidth="483.0" promptText="Password" />
+                       <PasswordField fx:id="passwordField" layoutX="270.0" layoutY="310.0" prefHeight="25.0" prefWidth="483.0" promptText="Password" />
                        <Label layoutX="61.0" layoutY="354.0" text="Confirm Password:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <PasswordField fx:id="confirmpasswordTextField" layoutX="270.0" layoutY="359.0" prefHeight="25.0" prefWidth="482.0" promptText="Confirm Password" />
-                       <Button fx:id="submitButton" layoutX="234.0" layoutY="483.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="306.0" style="-fx-background-color: #4f7942;" text="Submit" textFill="#fffdfd">
+                       <PasswordField fx:id="confirmPasswordField" layoutX="270.0" layoutY="359.0" prefHeight="25.0" prefWidth="482.0" promptText="Confirm Password" />
+                       <Button fx:id="submitButton" layoutX="234.0" layoutY="483.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="27.0" prefWidth="306.0" style="-fx-background-color: #4f7942;" text="Submit" textFill="#fffdfd">
                            <font>
                                <Font size="24.0" />
                            </font>
@@ -79,10 +79,16 @@
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <Hyperlink fx:id="alreadymemberHyperLink" alignment="CENTER" layoutX="217.0" layoutY="557.0" prefHeight="80.0" prefWidth="341.0" text="Already A Member? Click Here to Login." textAlignment="CENTER" wrapText="true">
+                       <Text layoutX="229.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already A Member? Click Here to Login.">
                      <font>
-                        <Font size="24.0" />
-                     </font></Hyperlink>
+                        <Font size="18.0" />
+                     </font></Text>
+                       <Button layoutX="304.0" layoutY="591.0" mnemonicParsing="false" onAction="#loginPageButton" prefHeight="33.0" prefWidth="167.0" style="-fx-background-color: #947352;" text="Log In" textFill="#fffdfd">
+                           <font>
+                               <Font size="13.0" />
+                           </font>
+                       </Button>
+
                    </children>
                </AnchorPane>
            </right>
