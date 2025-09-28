@@ -10,8 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.view.LoginController">
    <children>
        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
            <left>
@@ -28,24 +29,29 @@
            <right>
                <AnchorPane prefHeight="745.0" prefWidth="662.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
                    <children>
-                       <ImageView fitHeight="253.0" fitWidth="265.0" layoutX="191.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                       <Text layoutX="232.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EcoLogic">
+                           <font>
+                               <Font name="Charter Black Italic" size="36.0" />
+                           </font>
+                       </Text>
+                       <ImageView fitHeight="171.0" fitWidth="192.0" layoutX="217.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                                <Image url="@Images/logoconcept.png" />
                            </image>
                        </ImageView>
-                       <Label layoutX="80.0" layoutY="281.0" text="Email Address:">
+                       <Label layoutX="80.0" layoutY="281.0" style="-fx-font-weight: bold;" text="Email Address:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="usernameTextField" layoutX="256.0" layoutY="286.0" prefHeight="26.0" prefWidth="323.0" promptText="Email Address" />
-                       <Label layoutX="80.0" layoutY="341.0" text="Password:">
+                       <TextField fx:id="emailField" cache="true" layoutX="256.0" layoutY="286.0" prefHeight="26.0" prefWidth="323.0" promptText="Email Address" />
+                       <Label layoutX="80.0" layoutY="341.0" style="-fx-font-weight: bold;" text="Password:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <PasswordField fx:id="enterPasswordField" layoutX="256.0" layoutY="346.0" prefHeight="26.0" prefWidth="322.0" promptText="Password" />
-                       <Button fx:id="loginButton" layoutX="86.0" layoutY="471.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="491.0" style="-fx-background-color: #4F7942;" text="Login" textFill="WHITE">
+                       <PasswordField fx:id="passwordField" cache="true" layoutX="256.0" layoutY="346.0" prefHeight="26.0" prefWidth="322.0" promptText="Password" />
+                       <Button fx:id="loginButton" layoutX="86.0" layoutY="471.0" onAction="#loginButton" mnemonicParsing="false" prefHeight="51.0" prefWidth="491.0" style="-fx-background-color: #4F7942;" text="Login" textFill="WHITE">
                            <font>
                                <Font size="24.0" />
                            </font>
