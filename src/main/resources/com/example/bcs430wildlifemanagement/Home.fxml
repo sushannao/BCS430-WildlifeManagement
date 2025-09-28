@@ -104,7 +104,7 @@
                             </font>
                         </Text>
                         <Button layoutX="945.0" layoutY="47.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="130.0" text="Admin" textFill="WHITE" />
-                        <Button layoutX="1121.0" layoutY="7.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="154.0" text="User" textFill="WHITE" />
+                        <Button layoutX="1121.0" layoutY="7.0" mnemonicParsing="false" onAction="#SettingsButton" opacity="0.0" prefHeight="92.0" prefWidth="154.0" text="User" textFill="WHITE" />
 
                         <Button layoutX="1078.0" layoutY="24.0" mnemonicParsing="false" onAction="#SettingsButton" prefHeight="25.0" prefWidth="70.0" text="Settings" />
                     </children>
