@@ -7,60 +7,78 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="571.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.view.LoginController">
-   <Pane prefHeight="200.0" prefWidth="200.0">
-      <children>
-         <ImageView fitHeight="584.0" fitWidth="870.0" layoutX="-184.0" layoutY="-3.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: black;">
-            <image>
-               <Image url="@Images/Asian%20Small-clawed%20Otter.jpg" />
-            </image>
-         </ImageView>
-      </children>
-   </Pane>
-   <Pane layoutX="530.0" prefHeight="576.0" prefWidth="373.0" style="-fx-background-color: #ECECE7;">
-      <children>
-         <Text layoutX="108.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EcoLogic">
-            <font>
-               <Font name="Charter Black Italic" size="36.0" />
-            </font>
-         </Text>
-               <ImageView fitHeight="152.0" fitWidth="300.0" layoutX="36.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@Images/Ecologic%20Icon%201.0.png" />
-                  </image>
-               </ImageView>
-         <Text layoutX="153.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Email: ">
-            <font>
-               <Font name="System Bold" size="13.0" />
-            </font></Text>
-               <TextField fx:id="emailField" alignment="TOP_CENTER" cache="true" layoutX="101.0" layoutY="247.0" prefWidth="173.0" promptText="Email" />
-         <Text layoutX="143.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Password:">
-            <font>
-               <Font name="System Bold" size="13.0" />
-            </font></Text>
-               <PasswordField fx:id="passwordField" alignment="TOP_CENTER" cache="true" layoutX="99.0" layoutY="310.0" prefWidth="173.0" promptText="Password" />
-                <Button fx:id="loginButton" layoutX="44.0" layoutY="355.0" onAction="#loginButton" prefHeight="42.0" prefWidth="284.0" style="-fx-background-color: #4F7942;" text="Login" textFill="WHITE">
-                  <font>
-                     <Font size="13.0" />
-                  </font>
-               </Button>
-         <Text fill="#4f9ce4" layoutX="71.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password? &#10;Click Here for Admin Contact Information. " textAlignment="CENTER" />
-         <Button layoutX="115.0" layoutY="450.0" onAction="#contactAdminPopUp" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #947352;" text="Forgot Password" textFill="WHITE">
-            <font>
-               <Font size="13.0" />
-            </font>
-         </Button>
-         <Text fill="#4f9ce4" layoutX="98.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not Resgistered? &#10;Click Here to Create An Account." textAlignment="CENTER" />
-         <Button layoutX="115.0" layoutY="536.0" onAction="#registerPageButton" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #947352;" text="Create An Account" textFill="WHITE">
-            <font>
-               <Font size="13.0" />
-            </font>
-         </Button>
-         <Label fx:id="errorLabel" layoutX="37.0" layoutY="174.0" prefHeight="42.0" prefWidth="300.0" textAlignment="CENTER" />
-      </children>
-   </Pane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.view.LoginController">
+   <children>
+       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+           <left>
+               <AnchorPane prefHeight="407.0" prefWidth="228.0" BorderPane.alignment="CENTER">
+                   <children>
+                       <ImageView fitHeight="873.0" fitWidth="780.0" layoutX="-133.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: black;">
+                           <image>
+                               <Image url="@Images/Asian%20Small-clawed%20Otter%20-%20Crop.jpg" />
+                           </image>
+                       </ImageView>
+                   </children>
+               </AnchorPane>
+           </left>
+           <right>
+               <AnchorPane prefHeight="745.0" prefWidth="662.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
+                   <children>
+                       <Text layoutX="261.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EcoLogic">
+                           <font>
+                               <Font name="Charter Black Italic" size="36.0" />
+                           </font>
+                       </Text>
+                       <ImageView fitHeight="171.0" fitWidth="192.0" layoutX="246.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@Images/logoconcept.png" />
+                           </image>
+                       </ImageView>
+                       <Label layoutX="80.0" layoutY="281.0" style="-fx-font-weight: bold;" text="Email Address:">
+                           <font>
+                               <Font size="24.0" />
+                           </font>
+                       </Label>
+                       <TextField fx:id="emailField" cache="true" layoutX="256.0" layoutY="286.0" prefHeight="26.0" prefWidth="323.0" promptText="Email Address" />
+                       <Label layoutX="80.0" layoutY="341.0" style="-fx-font-weight: bold;" text="Password:">
+                           <font>
+                               <Font size="24.0" />
+                           </font>
+                       </Label>
+                       <PasswordField fx:id="passwordField" cache="true" layoutX="256.0" layoutY="346.0" prefHeight="26.0" prefWidth="322.0" promptText="Password" />
+                       <Button fx:id="loginButton" layoutX="86.0" layoutY="438.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="51.0" prefWidth="491.0" style="-fx-background-color: #4F7942;" text="Login" textFill="WHITE">
+                           <font>
+                               <Font size="24.0" />
+                           </font>
+                       </Button>
+                       <Label alignment="CENTER" layoutX="152.0" layoutY="390.0" prefHeight="35.0" prefWidth="329.0" text="Invalid Login. Please try again." textAlignment="CENTER" textFill="#f23e3e">
+                           <font>
+                               <Font size="18.0" />
+                           </font>
+                       </Label>
+                       <Button layoutX="225.0" layoutY="550.0" onAction="#contactAdminPopUp" prefHeight="34.0" prefWidth="213.0" style="-fx-background-color: #947352;" text="Forgot Password" textFill="WHITE">
+                           <font>
+                               <Font size="18.0" />
+                           </font>
+                       </Button>
+                       <Text fill="#4f9ce4" layoutX="215.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password? &#10;Click Here for Admin Contact Information. " textAlignment="CENTER" wrappingWidth="233.328125" />
+                       <Text fill="#4f9ce4" layoutX="245.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not Registered? &#10;Click Here to Create An Account." textAlignment="CENTER" />
+                       <Button layoutX="225.0" layoutY="637.0" onAction="#registerPageButton" prefHeight="39.0" prefWidth="213.0" style="-fx-background-color: #947352;" text="Create An Account" textFill="WHITE">
+                           <font>
+                               <Font size="18.0" />
+                           </font>
+                       </Button>
+
+
+
+                   </children>
+               </AnchorPane>
+           </right>
+       </BorderPane>
+
+   </children>
 </AnchorPane>

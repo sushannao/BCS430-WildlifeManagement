@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,60 +12,100 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.inventory.InventoryController">
-   <BorderPane prefHeight="800.0" prefWidth="1600.0">
-      <top>
-         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2E6F40;" BorderPane.alignment="CENTER">
-            <children>
-               <ImageView fitHeight="248.0" fitWidth="568.0" layoutX="-127.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@Images/Ecologic%20Icon%201.0.png" />
-                  </image>
-               </ImageView>
-               <ImageView fitHeight="143.0" fitWidth="141.0" layoutX="1373.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@Images/Default%20User%20Icon.png" />
-                  </image>
-               </ImageView>
-               <Label layoutX="235.0" layoutY="118.0" text="Home" textFill="WHITE">
-                  <font>
-                     <Font size="36.0" />
-                  </font>
-               </Label>
-               <Label layoutX="396.0" layoutY="118.0" text="Animals" textFill="WHITE">
-                  <font>
-                     <Font size="36.0" />
-                  </font>
-               </Label>
-               <Label layoutX="577.0" layoutY="118.0" text="Events" textFill="WHITE">
-                  <font>
-                     <Font size="36.0" />
-                  </font>
-               </Label>
-               <Label layoutX="728.0" layoutY="118.0" text="Incidents" textFill="WHITE">
-                  <font>
-                     <Font size="36.0" />
-                  </font>
-               </Label>
-               <Label layoutX="925.0" layoutY="118.0" text="Map" textFill="WHITE">
-                  <font>
-                     <Font size="36.0" />
-                  </font>
-               </Label>
-               <Label layoutX="1043.0" layoutY="118.0" text="Admin" textFill="WHITE">
-                  <font>
-                     <Font size="36.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
-      </top>
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.inventory.InventoryController">
+   <BorderPane prefHeight="720.0" prefWidth="1280.0">
+       <top>
+           <Pane prefHeight="98.0" prefWidth="1280.0" style="-fx-background-color: #4f7942;" BorderPane.alignment="CENTER">
+               <children>
+                   <Rectangle fill="#4f7942" height="99.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
+                   <Rectangle fill="#3f6135" height="99.0" layoutX="1137.0" layoutY="-2.0" stroke="#08000000" strokeType="INSIDE" strokeWidth="0.0" width="143.0" />
+                   <ImageView fitHeight="120.0" fitWidth="398.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@Images/thefencer.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="120.0" fitWidth="398.0" layoutX="398.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@Images/thefencer2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="120.0" fitWidth="398.0" layoutX="796.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@Images/thefencer.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="81.0" fitWidth="88.0" layoutX="1187.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@Images/Default User Icon.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="98.0" fitWidth="49.0" layoutX="1231.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@Images/leaves3.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="98.0" fitWidth="49.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@Images/leaves2.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="93.0" fitWidth="88.0" layoutX="16.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@Images/logoconcept.png" />
+                       </image>
+                   </ImageView>
+                   <ImageView fitHeight="98.0" fitWidth="49.0" layoutX="1088.0" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@Images/leaves.png" />
+                       </image>
+                   </ImageView>
+                   <Text fill="WHITE" layoutX="1128.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" wrappingWidth="66.0">
+                       <font>
+                           <Font name="System Bold" size="27.0" />
+                       </font>
+                   </Text>
+                   <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
+                       <font>
+                           <Font name="System Bold" size="24.0" />
+                       </font></Button>
+                   <Button layoutX="308.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Animals" textFill="WHITE">
+                       <font>
+                           <Font name="System Bold" size="25.0" />
+                       </font></Button>
+                   <Button layoutX="438.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Events" textFill="WHITE">
+                       <font>
+                           <Font name="System Bold" size="24.0" />
+                       </font></Button>
+                   <Button layoutX="568.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
+                       <font>
+                           <Font name="System Bold" size="24.0" />
+                       </font></Button>
+                   <Button layoutX="698.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Map" textFill="WHITE">
+                       <font>
+                           <Font name="System Bold" size="24.0" />
+                       </font></Button>
+                   <Button layoutX="828.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
+                       <font>
+                           <Font name="System Bold" size="25.0" />
+                       </font></Button>
+                   <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
+                       <font>
+                           <Font name="System Bold" size="24.0" />
+                       </font>
+                   </Button>
+                   <Button layoutX="1121.0" layoutY="7.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="154.0" text="User" textFill="WHITE" />
+
+               </children>
+           </Pane>
+       </top>
       <left>
-         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="484.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-               <ImageView fitHeight="490.0" fitWidth="256.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="526.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Images/Crop%20Black%20Howler%20Monkey.jpg" />
                   </image>
@@ -73,14 +114,14 @@
          </Pane>
       </left>
       <center>
-         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="526.0" prefWidth="859.0" BorderPane.alignment="CENTER">
             <children>
             
-                      <VBox prefHeight="485.0" prefWidth="1201.0" spacing="8">
+                      <VBox layoutX="-5.0" prefHeight="525.0" prefWidth="890.0" spacing="8">
             
                           <Label text="Inventory" />
             
-                          <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                          <TableView fx:id="table" prefHeight="468.0" prefWidth="873.0" VBox.vgrow="ALWAYS">
                         <columns>
                             <TableColumn fx:id="nameColumn" text="Name" />
                             <TableColumn fx:id="categoryColumn" text="Category" />
@@ -100,26 +141,51 @@
          </Pane>
       </center>
       <right>
-         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="526.0" prefWidth="193.0" BorderPane.alignment="CENTER">
             <children>
-               <ImageView fitHeight="490.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="526.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Images/Crop%20Black%20Howler%20Monkey.jpg" />
                   </image>
                </ImageView>
             </children></Pane>
       </right>
-      <bottom>
-         <Pane prefHeight="116.0" prefWidth="1600.0" style="-fx-background-color: #2E6F40;" BorderPane.alignment="CENTER">
-            <children>
-               <Label layoutX="565.0" layoutY="32.0" text="Copyright 2025 Team Wildlife" textFill="WHITE">
-                  <font>
-                     <Font size="36.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
-      </bottom>
+       <bottom>
+           <Pane prefHeight="96.0" prefWidth="1280.0" style="-fx-background-color: #4f7942;" BorderPane.alignment="CENTER">
+               <children>
+                   <Label fx:id="copyrightLabel" layoutX="302.0" layoutY="22.0" text="© 2025 Team Wildlife. All Rights Reserved." textFill="WHITE">
+                       <font>
+                           <Font size="36.0" />
+                       </font>
+                   </Label>
+                   <Label fx:id="teamNameLabel" layoutX="14.0" layoutY="1.0" prefHeight="26.0" prefWidth="206.0" text="Team Wildlife" textFill="WHITE">
+                       <font>
+                           <Font size="18.0" />
+                       </font>
+                   </Label>
+                   <Label fx:id="addressPhoneNumberLabel" layoutX="14.0" layoutY="24.0" prefHeight="70.0" prefWidth="142.0" text="123 Rainforest Drive Manhattan, NY 10282 949.555.5555" textFill="WHITE" wrapText="true">
+                       <font>
+                           <Font size="14.0" />
+                       </font>
+                   </Label>
+                   <Hyperlink fx:id="contactUsHyperlink" layoutX="1079.0" layoutY="35.0" prefHeight="26.0" prefWidth="81.0" text="Contact Us" textFill="#f8f5f5">
+                       <font>
+                           <Font size="14.0" />
+                       </font>
+                   </Hyperlink>
+                   <Hyperlink fx:id="frequentlyAskedQuestionsHyperlink" layoutX="1079.0" layoutY="59.0" prefHeight="27.0" prefWidth="187.0" text="Frequently Asked Questions" textFill="#f8f5f5">
+                       <font>
+                           <Font size="14.0" />
+                       </font>
+                   </Hyperlink>
+                   <Hyperlink fx:id="aboutUsHyperlink" layoutX="1079.0" layoutY="10.0" prefHeight="26.0" prefWidth="71.0" text="About Us" textFill="#f8f5f5">
+                       <font>
+                           <Font size="14.0" />
+                       </font>
+                   </Hyperlink>
+               </children>
+           </Pane>
+       </bottom>
    </BorderPane>
 
 
