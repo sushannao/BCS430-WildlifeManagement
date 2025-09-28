@@ -57,27 +57,27 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Text>
-      <Button layoutX="133.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="104.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
+      <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="263.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="133.0" style="-fx-background-color: transparent;" text="Animals" textFill="WHITE">
+      <Button layoutX="308.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Animals" textFill="WHITE">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Button>
-      <Button layoutX="403.0" layoutY="48.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-color: transparent;" text="Events" textFill="WHITE">
+      <Button layoutX="438.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Events" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="533.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="104.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
+      <Button layoutX="568.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="663.0" layoutY="48.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="88.0" style="-fx-background-color: transparent;" text="Map" textFill="WHITE">
+      <Button layoutX="698.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Map" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="783.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="117.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
+      <Button layoutX="828.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Button>
@@ -142,7 +142,7 @@
             <Image url="@Images/cornerleaf.png" />
          </image>
       </ImageView>
-      <Button layoutX="913.0" layoutY="48.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
+      <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
