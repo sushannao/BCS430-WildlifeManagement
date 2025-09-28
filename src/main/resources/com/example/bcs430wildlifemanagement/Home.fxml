@@ -68,45 +68,37 @@
                                 <Font name="System Bold" size="27.0" />
                             </font>
                         </Text>
-                        <Text fill="WHITE" layoutX="110.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" textAlignment="CENTER" wrappingWidth="143.0">
+                        <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="40.0" />
-                            </font>
-                        </Text>
-                        <Button layoutX="120.0" layoutY="47.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="125.0" text="Home" textFill="WHITE" />
-                        <Text fill="WHITE" layoutX="260.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Animals" textAlignment="CENTER" wrappingWidth="189.66665649414062">
+                                <Font name="System Bold" size="24.0" />
+                            </font></Button>
+                        <Button layoutX="308.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Animals" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="40.0" />
-                            </font>
-                        </Text>
-                        <Button layoutX="276.0" layoutY="40.0" mnemonicParsing="false" opacity="0.0" prefHeight="47.0" prefWidth="156.0" text="Animals" textFill="WHITE" />
-                        <Text fill="WHITE" layoutX="450.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Events" textAlignment="CENTER" wrappingWidth="153.66665649414062">
+                                <Font name="System Bold" size="25.0" />
+                            </font></Button>
+                        <Button layoutX="438.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Events" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="40.0" />
-                            </font>
-                        </Text>
-                        <Button layoutX="465.0" layoutY="47.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="124.0" text="Events" textFill="WHITE" />
-                        <Text fill="WHITE" layoutX="600.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incidents" textAlignment="CENTER" wrappingWidth="215.0">
+                                <Font name="System Bold" size="24.0" />
+                            </font></Button>
+                        <Button layoutX="568.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="40.0" />
-                            </font>
-                        </Text>
-                        <Button layoutX="619.0" layoutY="47.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="176.0" text="Incidents" textFill="WHITE" />
-                        <Text fill="WHITE" layoutX="800.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Map" textAlignment="CENTER" wrappingWidth="143.0">
+                                <Font name="System Bold" size="24.0" />
+                            </font></Button>
+                        <Button layoutX="698.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Map" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="40.0" />
-                            </font>
-                        </Text>
-                        <Button layoutX="824.0" layoutY="47.0" mnemonicParsing="false" opacity="0.0" prefHeight="47.0" prefWidth="98.0" text="Map" textFill="WHITE" />
-                        <Text fill="WHITE" layoutX="930.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" textAlignment="CENTER" wrappingWidth="161.25">
+                                <Font name="System Bold" size="24.0" />
+                            </font></Button>
+                        <Button layoutX="828.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="40.0" />
+                                <Font name="System Bold" size="25.0" />
+                            </font></Button>
+                        <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
                             </font>
-                        </Text>
-                        <Button layoutX="945.0" layoutY="47.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="130.0" text="Admin" textFill="WHITE" />
-                        <Button layoutX="1121.0" layoutY="7.0" mnemonicParsing="false" onAction="#SettingsButton" opacity="0.0" prefHeight="92.0" prefWidth="154.0" text="User" textFill="WHITE" />
+                        </Button>
+                        <Button layoutX="1121.0" layoutY="7.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="154.0" text="User" textFill="WHITE" />
 
-                        <Button layoutX="1078.0" layoutY="24.0" mnemonicParsing="false" onAction="#SettingsButton" prefHeight="25.0" prefWidth="70.0" text="Settings" />
                     </children>
                 </Pane>
             </top>
