@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -33,61 +34,73 @@
                                <Font size="36.0" />
                            </font>
                        </Label>
-                       <Label layoutX="61.0" layoutY="106.0" text="First Name:">
+                       <Label layoutX="62.0" layoutY="106.0" text="First Name:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="fNameField" layoutX="270.0" layoutY="111.0" prefHeight="25.0" prefWidth="483.0" promptText="First Name" />
-                       <Label layoutX="61.0" layoutY="152.0" text="Last Name:">
+                       <TextField fx:id="fNameField" alignment="TOP_CENTER" layoutX="319.0" layoutY="111.0" prefHeight="25.0" prefWidth="444.0" promptText="First Name" />
+                       <Label layoutX="63.0" layoutY="152.0" text="Last Name:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="lNameField" layoutX="270.0" layoutY="157.0" prefHeight="25.0" prefWidth="483.0" promptText="Last Name" />
-                       <Label layoutX="61.0" layoutY="205.0" text="Email Address:">
+                       <TextField fx:id="lNameField" alignment="TOP_CENTER" layoutX="319.0" layoutY="157.0" prefHeight="25.0" prefWidth="444.0" promptText="Last Name" />
+                       <Label layoutX="61.0" layoutY="236.0" text="Confirm Email Address:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="confirmEmailField" layoutX="270.0" layoutY="210.0" prefHeight="25.0" prefWidth="483.0" promptText="Email Address" />
-                       <Label layoutX="61.0" layoutY="252.0" text="Phone Number:">
+                       <TextField fx:id="confirmEmailField" alignment="TOP_CENTER" layoutX="319.0" layoutY="241.0" prefHeight="25.0" prefWidth="444.0" promptText="Confirm Email Address" />
+                       <Label layoutX="61.0" layoutY="274.0" text="Phone Number:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="phoneNumField" layoutX="270.0" layoutY="257.0" prefHeight="25.0" prefWidth="483.0" promptText="Phone Number" />
-                       <Label layoutX="61.0" layoutY="305.0" text="Password:">
+                       <TextField fx:id="phoneNumField" alignment="TOP_CENTER" layoutX="319.0" layoutY="279.0" prefHeight="25.0" prefWidth="444.0" promptText="Phone Number" />
+                       <Label layoutX="61.0" layoutY="315.0" text="Password:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <PasswordField fx:id="passwordField" layoutX="270.0" layoutY="310.0" prefHeight="25.0" prefWidth="483.0" promptText="Password" />
-                       <Label layoutX="61.0" layoutY="354.0" text="Confirm Password:">
+                       <PasswordField fx:id="passwordField" alignment="TOP_CENTER" layoutX="319.0" layoutY="320.0" prefHeight="25.0" prefWidth="444.0" promptText="Password" />
+                       <Label layoutX="61.0" layoutY="360.0" text="Confirm Password:">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <PasswordField fx:id="confirmPasswordField" layoutX="270.0" layoutY="359.0" prefHeight="25.0" prefWidth="482.0" promptText="Confirm Password" />
-                       <Button fx:id="submitButton" layoutX="234.0" layoutY="483.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="27.0" prefWidth="306.0" style="-fx-background-color: #4f7942;" text="Submit" textFill="#fffdfd">
+                       <PasswordField fx:id="confirmPasswordField" alignment="TOP_CENTER" layoutX="319.0" layoutY="365.0" prefHeight="25.0" prefWidth="444.0" promptText="Confirm Password" />
+                       <Button fx:id="submitButton" layoutX="235.0" layoutY="512.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="27.0" prefWidth="306.0" style="-fx-background-color: #4f7942;" text="Submit" textFill="#fffdfd">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Button>
-                       <Label alignment="CENTER" layoutX="223.0" layoutY="418.0" prefHeight="35.0" prefWidth="356.0" text="Error Message: Please Try Again." textAlignment="CENTER" textFill="#f24949">
+                       <Label alignment="CENTER" layoutX="223.0" layoutY="457.0" prefHeight="35.0" prefWidth="356.0" text="Error Message: Please Try Again." textAlignment="CENTER" textFill="#f24949">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <Text layoutX="229.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already A Member? Click Here to Login.">
+                       <Text layoutX="230.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already A Member? Click Here to Login.">
                      <font>
                         <Font size="18.0" />
                      </font></Text>
-                       <Button layoutX="304.0" layoutY="591.0" mnemonicParsing="false" onAction="#loginPageButton" prefHeight="33.0" prefWidth="167.0" style="-fx-background-color: #947352;" text="Log In" textFill="#fffdfd">
+                       <Button layoutX="235.0" layoutY="631.0" mnemonicParsing="false" onAction="#loginPageButton" prefHeight="27.0" prefWidth="306.0" style="-fx-background-color: #947352;" text="Log In" textFill="#fffdfd">
                            <font>
-                               <Font size="13.0" />
+                               <Font size="24.0" />
                            </font>
                        </Button>
+                  <Label layoutX="61.0" layoutY="194.0" text="Email Address:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                       <TextField fx:id="emailField" alignment="TOP_CENTER" layoutX="319.0" layoutY="199.0" prefHeight="25.0" prefWidth="444.0" promptText="Email Address" />
+                       <ComboBox fx:id="roleBox" layoutX="319.0" layoutY="408.0" prefWidth="444.0" promptText="Select Role" />
+                  <Label layoutX="61.0" layoutY="403.0" text="Select Role:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
 
                    </children>
                </AnchorPane>
