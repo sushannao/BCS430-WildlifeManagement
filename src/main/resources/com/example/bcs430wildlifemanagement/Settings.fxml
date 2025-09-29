@@ -292,10 +292,5 @@
             </center>
         </BorderPane>
         <Label layoutX="-57.0" layoutY="163.0" text="Skills" />
-            <ImageView fx:id="imageLeft" fitHeight="585.0" fitWidth="790.0" layoutX="-319.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@Images/panda.jpg" />
-                </image>
-            </ImageView>
     </children>
 </AnchorPane>
