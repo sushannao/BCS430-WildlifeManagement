@@ -133,7 +133,6 @@
             
                           <HBox spacing="8">
                         <Button onAction="#invRequestSelected" text="Request Restock" />
-                        <Button onAction="#invViewRequests" text="Views Requests" />
                         <Button onAction="#onAddItem" text="Add item" />
                     </HBox>
                 </VBox>

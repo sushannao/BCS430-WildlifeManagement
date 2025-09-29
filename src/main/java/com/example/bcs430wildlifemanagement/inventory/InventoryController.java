@@ -104,13 +104,7 @@ public class InventoryController {
             new Alert(Alert.AlertType.ERROR, "Error sending request", ButtonType.OK).showAndWait();
         }
     }
-    @FXML
-    public void invViewRequests() {
-        String text = data.getRequests().isEmpty() ? "Nso request" :
-                data.getRequests().stream().map(InventoryItem::getName).collect(Collectors.joining(", "));
 
-        showInfo(text);
-    }
     @FXML
     private void onAddItem() {
         Dialog<InventoryItem> dialog = new Dialog<>();
