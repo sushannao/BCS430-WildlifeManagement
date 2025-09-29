@@ -3,18 +3,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="637.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.view.SettingsController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.view.SettingsController">
    <children>
-      <BorderPane prefHeight="637.0" prefWidth="604.0">
+      <BorderPane prefHeight="720.0" prefWidth="1281.0">
          <top>
-            <Pane prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+            <Pane prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="errorLabel" layoutX="158.0" layoutY="3.0" prefHeight="51.0" prefWidth="298.0" />
+               </children></Pane>
          </top>
          <left>
             <Pane prefHeight="340.0" prefWidth="115.0" BorderPane.alignment="CENTER" />
@@ -28,25 +36,60 @@
          <center>
             <Pane prefHeight="319.0" prefWidth="370.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="157.0" layoutY="498.0" mnemonicParsing="false" onAction="#logoutButton" text="LogOut" />
-                  <Button layoutX="151.0" layoutY="240.0" mnemonicParsing="false" onAction="#updateButton" text="Update" />
-                  <Label fx:id="errorLabel" layoutX="37.0" layoutY="273.0" prefHeight="51.0" prefWidth="298.0" />
-                  <Button layoutX="261.0" layoutY="498.0" mnemonicParsing="false" onAction="#contactAdminPopUp" text="Contact Admin" />
+                  <Button layoutX="157.0" layoutY="572.0" mnemonicParsing="false" onAction="#logoutButton" text="LogOut" />
+                  <Button layoutX="179.0" layoutY="295.0" mnemonicParsing="false" onAction="#updateButton" text="Update" />
+                  <Button layoutX="301.0" layoutY="572.0" mnemonicParsing="false" onAction="#contactAdminPopUp" text="Contact Admin" />
                   <TextField fx:id="emailField" layoutX="107.0" layoutY="14.0" />
                   <TextField fx:id="phoneNumField" layoutX="107.0" layoutY="47.0" />
-                  <TextArea fx:id="limitsField" layoutX="80.0" layoutY="159.0" prefHeight="77.0" prefWidth="200.0" />
-                  <TextArea fx:id="skillsField" layoutX="80.0" layoutY="80.0" prefHeight="72.0" prefWidth="200.0" />
+                  <TextArea fx:id="limitsField" layoutX="115.0" layoutY="206.0" prefHeight="77.0" prefWidth="200.0" />
+                  <TextArea fx:id="skillsField" layoutX="110.0" layoutY="100.0" prefHeight="72.0" prefWidth="200.0" />
                   <Text layoutX="49.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email: " />
                   <Text layoutX="21.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="phonenumber" />
-                  <Text layoutX="38.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="skills" />
-                  <Text layoutX="37.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="limits" />
-                  <Text layoutX="4.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="current password" />
-                  <Text layoutX="20.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="new password" />
-                  <Text layoutX="20.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="new password" />
-                  <Button layoutX="120.0" layoutY="442.0" mnemonicParsing="false" onAction="#changePasswordButton" text="change passwords" />
-                  <PasswordField fx:id="currentPassworField" layoutX="120.0" layoutY="331.0" />
-                  <PasswordField fx:id="newPasswordField" layoutX="120.0" layoutY="369.0" />
-                  <PasswordField fx:id="confirmNewPasswordField" layoutX="120.0" layoutY="409.0" />
+                  <Text layoutX="44.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="skills" />
+                  <Text layoutX="40.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="limits" />
+                  <Text layoutX="19.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="current password" />
+                  <Text layoutX="26.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="new password" />
+                  <Text layoutX="28.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="new password" />
+                  <Button layoutX="126.0" layoutY="533.0" mnemonicParsing="false" onAction="#changePasswordButton" text="change passwords" />
+                  <PasswordField fx:id="currentPassworField" layoutX="128.0" layoutY="416.0" />
+                  <PasswordField fx:id="newPasswordField" layoutX="130.0" layoutY="457.0" />
+                  <PasswordField fx:id="confirmNewPasswordField" layoutX="127.0" layoutY="494.0" />
+                  <Text layoutX="658.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="availability" />
+                  <TableView layoutX="437.0" layoutY="177.0" prefHeight="69.0" prefWidth="520.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Sunday" />
+                      <TableColumn prefWidth="69.997802734375" text="Monday" />
+                        <TableColumn prefWidth="75.0" text="Tuesday" />
+                        <TableColumn prefWidth="75.0" text="Wednesday" />
+                        <TableColumn prefWidth="75.0" text="Thrusday" />
+                        <TableColumn prefWidth="75.0" text="Friday" />
+                        <TableColumn prefWidth="75.0" text="Saturday" />
+                    </columns>
+                  </TableView>
+                  <TextField layoutX="734.0" layoutY="295.0" prefHeight="26.0" prefWidth="62.0" />
+                  <TextField layoutX="530.0" layoutY="282.0" prefHeight="26.0" prefWidth="62.0" />
+                  <TextField layoutX="600.0" layoutY="293.0" prefHeight="26.0" prefWidth="62.0" />
+                  <TextField layoutX="669.0" layoutY="294.0" prefHeight="26.0" prefWidth="62.0" />
+                  <TextField layoutX="865.0" layoutY="293.0" prefHeight="26.0" prefWidth="62.0" />
+                  <TextField layoutX="799.0" layoutY="294.0" prefHeight="26.0" prefWidth="62.0" />
+                  <GridPane layoutX="748.0" layoutY="386.0" prefHeight="96.0" prefWidth="183.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <TextField GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" />
+                        <TextField prefHeight="26.0" prefWidth="324.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Button layoutX="676.0" layoutY="547.0" mnemonicParsing="false" onAction="#homePageButton" text="Home" />
                </children>
             </Pane>
          </center>

@@ -55,7 +55,7 @@
                                <Font size="24.0" />
                            </font>
                        </Button>
-                       <Label alignment="CENTER" layoutX="152.0" layoutY="390.0" prefHeight="35.0" prefWidth="329.0" text="Invalid Login. Please try again." textAlignment="CENTER" textFill="#f23e3e">
+                       <Label fx:id="errorLabel" alignment="CENTER" layoutX="152.0" layoutY="390.0" prefHeight="35.0" prefWidth="329.0" textAlignment="CENTER" textFill="#f23e3e">
                            <font>
                                <Font size="18.0" />
                            </font>

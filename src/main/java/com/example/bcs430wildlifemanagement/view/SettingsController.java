@@ -3,6 +3,7 @@ package com.example.bcs430wildlifemanagement.view;
 import com.example.bcs430wildlifemanagement.model.App;
 import com.example.bcs430wildlifemanagement.model.UserSession;
 import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
@@ -37,6 +38,38 @@ public class SettingsController {
     public void logoutButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Login.fxml");
     }
+    public void homePageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcswildlifemanagement/Home.fxml");
+    }
+
+    @FXML public void initialize() {
+        displayUserData();
+    }
+
+    private void displayUserData() {
+        try {
+            Firestore db = FirestoreClient.getFirestore();
+            DocumentReference docRef = db.collection("users").document(uid);
+            DocumentSnapshot snapshot = docRef.get().get();
+
+            if (snapshot.exists()){
+                String email = FirebaseAuth.getInstance().getUser(uid).getEmail();
+                String phoneNum = snapshot.getString("phoneNumber");
+                String skills = snapshot.getString("skills");
+                String limits = snapshot.getString("limitations");
+
+                emailField.setText(email);
+                phoneNumField.setText(phoneNum);
+                skillsField.setText(skills);
+                limitsField.setText(limits);
+            } else {
+                errorLabel.setText("User not found.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            errorLabel.setText("Failed to load previous data.");
+        }
+    }
 
     public void updateButton(ActionEvent actionEvent) throws IOException, FirebaseAuthException {
         String newEmail = emailField.getText();
@@ -70,6 +103,11 @@ public class SettingsController {
             errorLabel.setText("Update Failed. Try again or contact Admin.");
         }
     }
+
+    public void updateAvailButton(ActionEvent actionEvent) throws IOException {
+
+    }
+
     @FXML private void contactAdminPopUp(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Your profile not updating?");
@@ -159,6 +197,7 @@ public class SettingsController {
             return null;
         }
     }
+
     private static final String apiKey = getApiKey();
 
     public void changePassword(String idToken, String newPassword) throws IOException {

@@ -70,12 +70,12 @@
                            </font>
                        </Label>
                        <PasswordField fx:id="confirmPasswordField" alignment="TOP_CENTER" layoutX="319.0" layoutY="365.0" prefHeight="25.0" prefWidth="444.0" promptText="Confirm Password" />
-                       <Button fx:id="submitButton" layoutX="235.0" layoutY="512.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="27.0" prefWidth="306.0" style="-fx-background-color: #4f7942;" text="Submit" textFill="#fffdfd">
+                       <Button fx:id="submitButton" layoutX="235.0" layoutY="512.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="33.0" prefWidth="306.0" style="-fx-background-color: #4f7942;" text="Submit" textFill="#fffdfd">
                            <font>
                                <Font size="24.0" />
                            </font>
                        </Button>
-                       <Label alignment="CENTER" layoutX="223.0" layoutY="457.0" prefHeight="35.0" prefWidth="356.0" text="Error Message: Please Try Again." textAlignment="CENTER" textFill="#f24949">
+                       <Label fx:id="errorLabel" alignment="CENTER" layoutX="223.0" layoutY="457.0" prefHeight="35.0" prefWidth="356.0" textAlignment="CENTER" textFill="#f24949">
                            <font>
                                <Font size="24.0" />
                            </font>
@@ -84,7 +84,7 @@
                      <font>
                         <Font size="18.0" />
                      </font></Text>
-                       <Button layoutX="235.0" layoutY="631.0" mnemonicParsing="false" onAction="#loginPageButton" prefHeight="27.0" prefWidth="306.0" style="-fx-background-color: #947352;" text="Log In" textFill="#fffdfd">
+                       <Button layoutX="235.0" layoutY="631.0" mnemonicParsing="false" onAction="#loginPageButton" prefHeight="32.0" prefWidth="306.0" style="-fx-background-color: #947352;" text="Log In" textFill="#fffdfd">
                            <font>
                                <Font size="24.0" />
                            </font>
