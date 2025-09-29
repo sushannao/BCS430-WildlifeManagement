@@ -51,8 +51,54 @@ public class InventoryController {
             showInfo("Nothing selected");
             return;
         }
-        data.requestRestock(selected);
-        showInfo("Restock requested: " + selected.getName());
+        if (selected.getId() == null || selected.getId().isBlank()) {
+            showInfo("Item has no id");
+            return;
+        }
+        TextInputDialog dialog = new TextInputDialog("1");
+        dialog.setTitle("Request Resupply");
+        dialog.setHeaderText("How many " + selected.getName() + " do you need?");
+        dialog.setContentText("Quantity: ");
+        var result = dialog.showAndWait();
+        if (result.isEmpty()) {
+            return;
+        }
+        int qty;
+        try {
+            qty = Integer.parseInt(result.get());
+            if (qty <= 0) throw new NumberFormatException();
+        } catch (NumberFormatException e) {
+            new Alert(Alert.AlertType.ERROR, "Invalid quantity", ButtonType.OK).showAndWait();
+            return;
+        }
+        TextInputDialog notesBox = new TextInputDialog("");
+        notesBox.setTitle("Notes");
+        notesBox.setHeaderText("Optional");
+        notesBox.setContentText("Notes: ");
+        String notes = notesBox.showAndWait().orElse("");
+        try {
+            var db = FirestoreContext.firebase();
+            var data = new java.util.HashMap<String, Object>();
+            data.put("itemId", selected.getId());
+            data.put("itemName", selected.getName());
+            data.put("quantityRequested", qty);
+            data.put("unit", selected.getUnit());
+            data.put("notes", notes);
+            var currentInv = new java.util.HashMap<String, Object>();
+            currentInv.put("quantity", selected.getQuantity());
+            currentInv.put("lowStock", selected.getLowStock());
+            currentInv.put("unit", selected.getUnit());
+            currentInv.put("location", selected.getLocation());
+            data.put("currentInventory", currentInv);
+            data.put("Timestamp: ", com.google.cloud.firestore.FieldValue.serverTimestamp());
+            data.put("requestedEmail", com.example.bcs430wildlifemanagement.model.UserSession.getEmail());
+            data.put("requesterName", com.example.bcs430wildlifemanagement.model.UserSession.getUid());
+            db.collection("resupplyRequests").add(data).get();
+            showInfo("Request sent for " + selected.getName());
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Error sending request", ButtonType.OK).showAndWait();
+        }
     }
     @FXML
     public void invViewRequests() {

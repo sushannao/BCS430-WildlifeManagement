@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.bcs430wildlifemanagement.view.RequestsController">
+
+    <top>
+        <ToolBar>
+            <Button text="Back" onAction="#backToAdmin"/>
+            <Label text="Resupply Requests"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Fulfill" onAction="#fulfillRequest"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn fx:id="itemColumn" text="Item"/>
+                <TableColumn fx:id="quantityColumn" text="Qty"/>
+                <TableColumn fx:id="unitColumn" text="Unit"/>
+                <TableColumn fx:id="nameColumn" text="Requester"/>
+                <TableColumn fx:id="emailColumn" text="Email"/>
+                <TableColumn fx:id="notesColumn" text="Notes"/>
+                <TableColumn fx:id="createdColumn" text="Created"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
