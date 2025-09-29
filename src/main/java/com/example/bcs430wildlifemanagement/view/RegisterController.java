@@ -92,8 +92,8 @@ public class RegisterController {
             userData.put("role", role);
 
             Firestore db = FirestoreClient.getFirestore();
-            DocumentReference docRef = db.collection("users").document(userInput.getUid());
-            docRef.set(userData).get();
+            DocumentReference reference = db.collection("users").document(userInput.getUid());
+            reference.set(userData).get();
 
             System.out.println("User data saved to Firestore.");
             errorLabel.setText("Registration Successful. Now Login!");

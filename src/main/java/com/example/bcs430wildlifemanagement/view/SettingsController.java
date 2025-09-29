@@ -37,7 +37,6 @@ public class SettingsController {
     @FXML private TextField fridayField;
     @FXML private TextField saturdayField;
 
-
     @FXML private PasswordField currentPasswordField;
     @FXML private PasswordField newPasswordField;
     @FXML private PasswordField confirmNewPasswordField;
@@ -67,8 +66,8 @@ public class SettingsController {
     private void displayUserData() {
         try {
             Firestore db = FirestoreClient.getFirestore();
-            DocumentReference docRef = db.collection("users").document(uid);
-            DocumentSnapshot snapshot = docRef.get().get();
+            DocumentReference reference = db.collection("users").document(uid);
+            DocumentSnapshot snapshot = reference.get().get();
 
             if (snapshot.exists()){
                 String email = FirebaseAuth.getInstance().getUser(uid).getEmail();
@@ -114,12 +113,12 @@ public class SettingsController {
             return;
         }
         if (!newEmail.isEmpty()) {
-            UserRecord.UpdateRequest rq = new UserRecord.UpdateRequest(uid).setEmail(newEmail);
-            FirebaseAuth.getInstance().updateUser(rq);
+            UserRecord.UpdateRequest userRq = new UserRecord.UpdateRequest(uid).setEmail(newEmail);
+            FirebaseAuth.getInstance().updateUser(userRq);
         }
 
         Firestore db = FirestoreClient.getFirestore();
-        DocumentReference docRef = db.collection("users").document(uid);
+        DocumentReference reference = db.collection("users").document(uid);
 
         Map<String, Object> update = new HashMap<>();
         update.put("phoneNumber", newPhoneNum);
@@ -127,7 +126,7 @@ public class SettingsController {
         update.put("limitations", newLimits);
 
         try {
-            docRef.update(update).get();
+            reference.update(update).get();
             System.out.println("Update Successful.");
             errorLabel.setText("Update Successful!");
         } catch (Exception e) {
@@ -146,7 +145,7 @@ public class SettingsController {
         String saturday = saturdayField.getText();
 
         Firestore db = FirestoreClient.getFirestore();
-        DocumentReference docRef = db.collection("users").document(uid);
+        DocumentReference reference = db.collection("users").document(uid);
 
         Map<String, Object> update = new HashMap<>();
         update.put("Availability Sunday", sunday);
@@ -158,7 +157,7 @@ public class SettingsController {
         update.put("Availability Saturday", saturday);
 
         try {
-            docRef.update(update).get();
+            reference.update(update).get();
             System.out.println("Update Successful.");
             errorLabel.setText("Update Successful!");
         } catch (Exception e) {
