@@ -1,22 +1,13 @@
 package com.example.bcs430wildlifemanagement.view;
 
 import com.example.bcs430wildlifemanagement.model.App;
-import com.example.bcs430wildlifemanagement.model.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 
 import java.io.IOException;
 
-public class HomeController {
-    @FXML private Label welcomeLabel;
-
-    @FXML
-    public void initialize() {
-        String username = UserSession.getUsername();
-        welcomeLabel.setText("Welcome " + username + "!");
-    }
+public class FormsController {
 
     public void HomePageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
@@ -34,6 +25,10 @@ public class HomeController {
         App.setRoot("/com/example/bcs430wildlifemanagement/Settings.fxml");
     }
 
+    public void ViewInventoryPageButton(ActionEvent actionEvent) throws IOException{
+        App.setRoot("/com/example/bcs430wildlifemanagement/Inventory.fxml");
+    }
+
     @FXML
     private void contactAdminPopUp(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -42,4 +37,5 @@ public class HomeController {
         alert.setContentText("Name: Admin Suzie \nPhone Number: 123.456.7890 \nEmail: admin@gmail.com");
         alert.showAndWait();
     }
+
 }

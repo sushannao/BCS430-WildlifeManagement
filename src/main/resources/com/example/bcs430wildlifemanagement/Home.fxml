@@ -68,7 +68,7 @@
                                 <Font name="System Bold" size="27.0" />
                             </font>
                         </Text>
-                        <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
+                        <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" onAction="#HomePageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font></Button>
@@ -80,7 +80,7 @@
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font></Button>
-                        <Button layoutX="568.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
+                        <Button layoutX="568.0" layoutY="47.0" mnemonicParsing="false" onAction="#FormsPageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font></Button>
@@ -88,11 +88,11 @@
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font></Button>
-                        <Button layoutX="828.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
+                        <Button layoutX="828.0" layoutY="47.0" mnemonicParsing="false" onAction="#AdminPageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="25.0" />
                             </font></Button>
-                        <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" onAction="#SettingsButton" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
+                        <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" onAction="#SettingsPageButton" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
@@ -141,7 +141,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Hyperlink fx:id="contactUsHyperlink" layoutX="1079.0" layoutY="35.0" prefHeight="26.0" prefWidth="81.0" text="Contact Us" textFill="#f8f5f5">
+                  <Hyperlink fx:id="contactUsHyperlink" layoutX="1079.0" layoutY="35.0" onAction="#contactAdminPopUp" prefHeight="26.0" prefWidth="81.0" text="Contact Us" textFill="#f8f5f5">
                      <font>
                         <Font size="14.0" />
                      </font>

@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.inventory.InventoryController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bcs430wildlifemanagement.view.FormsController">
     <BorderPane prefHeight="720.0" prefWidth="1280.0">
         <top>
             <Pane prefHeight="98.0" prefWidth="1280.0" style="-fx-background-color: #4f7942;" BorderPane.alignment="CENTER">
@@ -64,7 +64,7 @@
                             <Font name="System Bold" size="27.0" />
                         </font>
                     </Text>
-                    <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
+                    <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" onAction="#HomePageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
                         <font>
                             <Font name="System Bold" size="24.0" />
                         </font></Button>
@@ -76,7 +76,7 @@
                         <font>
                             <Font name="System Bold" size="24.0" />
                         </font></Button>
-                    <Button layoutX="568.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
+                    <Button layoutX="568.0" layoutY="47.0" mnemonicParsing="false" onAction="#FormsPageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
                         <font>
                             <Font name="System Bold" size="24.0" />
                         </font></Button>
@@ -84,11 +84,11 @@
                         <font>
                             <Font name="System Bold" size="24.0" />
                         </font></Button>
-                    <Button layoutX="828.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
+                    <Button layoutX="828.0" layoutY="47.0" mnemonicParsing="false" onAction="#AdminPageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
                         <font>
                             <Font name="System Bold" size="25.0" />
                         </font></Button>
-                    <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
+                    <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" onAction="#SettingsPageButton" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
                         <font>
                             <Font name="System Bold" size="24.0" />
                         </font>
@@ -112,7 +112,7 @@
         <center>
             <Pane prefHeight="526.0" prefWidth="859.0" BorderPane.alignment="CENTER">
             <children>
-               <Button fx:id="viewInventoryButton" layoutX="14.0" layoutY="66.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" text="View Inventory">
+               <Button fx:id="viewInventoryButton" layoutX="14.0" layoutY="66.0" mnemonicParsing="false" onAction="#ViewInventoryPageButton" prefHeight="37.0" prefWidth="147.0" text="View Inventory">
                   <font>
                      <Font size="18.0" />
                   </font>
@@ -153,7 +153,7 @@
                             <Font size="14.0" />
                         </font>
                     </Label>
-                    <Hyperlink fx:id="contactUsHyperlink" layoutX="1079.0" layoutY="35.0" prefHeight="26.0" prefWidth="81.0" text="Contact Us" textFill="#f8f5f5">
+                    <Hyperlink fx:id="contactUsHyperlink" layoutX="1079.0" layoutY="35.0" onAction="#contactAdminPopUp" prefHeight="26.0" prefWidth="81.0" text="Contact Us" textFill="#f8f5f5">
                         <font>
                             <Font size="14.0" />
                         </font>
