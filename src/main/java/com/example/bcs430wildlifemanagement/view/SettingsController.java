@@ -29,17 +29,35 @@ public class SettingsController {
     @FXML private TextArea limitsField;
     @FXML private Label errorLabel;
 
+    @FXML private TextField sundayField;
+    @FXML private TextField mondayField;
+    @FXML private TextField tuesdayField;
+    @FXML private TextField wednesdayField;
+    @FXML private TextField thursdayField;
+    @FXML private TextField fridayField;
+    @FXML private TextField saturdayField;
+
+
     @FXML private PasswordField currentPasswordField;
     @FXML private PasswordField newPasswordField;
     @FXML private PasswordField confirmNewPasswordField;
 
     String uid = UserSession.getUid();
 
+    public void homePageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
+    }
+    public void formsPageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/Forms.fxml");
+    }
+    public void adminPageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/Admin.fxml");
+    }
+    public void settingsPageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/Settings.fxml");
+    }
     public void logoutButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Login.fxml");
-    }
-    public void homePageButton(ActionEvent actionEvent) throws IOException {
-        App.setRoot("/com/example/bcswildlifemanagement/Home.fxml");
     }
 
     @FXML public void initialize() {
@@ -57,11 +75,25 @@ public class SettingsController {
                 String phoneNum = snapshot.getString("phoneNumber");
                 String skills = snapshot.getString("skills");
                 String limits = snapshot.getString("limitations");
+                String sunday = snapshot.getString("Availability Sunday");
+                String monday = snapshot.getString("Availability Monday");
+                String tuesday = snapshot.getString("Availability Tuesday");
+                String wednesday = snapshot.getString("Availability Wednesday");
+                String thursday = snapshot.getString("Availability Thursday");
+                String friday = snapshot.getString("Availability Friday");
+                String saturday = snapshot.getString("Availability Saturday");
 
                 emailField.setText(email);
                 phoneNumField.setText(phoneNum);
                 skillsField.setText(skills);
                 limitsField.setText(limits);
+                sundayField.setText(sunday);
+                mondayField.setText(monday);
+                tuesdayField.setText(tuesday);
+                wednesdayField.setText(wednesday);
+                thursdayField.setText(thursday);
+                fridayField.setText(friday);
+                saturdayField.setText(saturday);
             } else {
                 errorLabel.setText("User not found.");
             }
@@ -71,7 +103,7 @@ public class SettingsController {
         }
     }
 
-    public void updateButton(ActionEvent actionEvent) throws IOException, FirebaseAuthException {
+    public void updateProfileButton(ActionEvent actionEvent) throws IOException, FirebaseAuthException {
         String newEmail = emailField.getText();
         String newPhoneNum = phoneNumField.getText();
         String newSkills = skillsField.getText();
@@ -105,15 +137,34 @@ public class SettingsController {
     }
 
     public void updateAvailButton(ActionEvent actionEvent) throws IOException {
+        String sunday = sundayField.getText();
+        String monday = mondayField.getText();
+        String tuesday = tuesdayField.getText();
+        String wednesday = wednesdayField.getText();
+        String thursday = thursdayField.getText();
+        String friday = fridayField.getText();
+        String saturday = saturdayField.getText();
 
-    }
+        Firestore db = FirestoreClient.getFirestore();
+        DocumentReference docRef = db.collection("users").document(uid);
 
-    @FXML private void contactAdminPopUp(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Your profile not updating?");
-        alert.setHeaderText("Try Again! If it still doesn't work, Contact Admin.");
-        alert.setContentText("Name: Admin Suzie \nPhone Number: 123.456.7890 \nEmail: admin@gmail.com");
-        alert.showAndWait();
+        Map<String, Object> update = new HashMap<>();
+        update.put("Availability Sunday", sunday);
+        update.put("Availability Monday", monday);
+        update.put("Availability Tuesday", tuesday);
+        update.put("Availability Wednesday", wednesday);
+        update.put("Availability Thursday", thursday);
+        update.put("Availability Friday", friday);
+        update.put("Availability Saturday", saturday);
+
+        try {
+            docRef.update(update).get();
+            System.out.println("Update Successful.");
+            errorLabel.setText("Update Successful!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            errorLabel.setText("Update Failed. Try again or contact Admin.");
+        }
     }
 
     public static String getIdToken (String email, String password) throws IOException {
@@ -219,4 +270,14 @@ public class SettingsController {
             System.out.println("Failed to change password.");
         }
     }
+
+    /* @FXML private void contactAdminPopUp(ActionEvent event) { //not needed right now
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Your profile not updating?");
+        alert.setHeaderText("Try Again! If it still doesn't work, Contact Admin.");
+        alert.setContentText("Name: Admin Suzie \nPhone Number: 123.456.7890 \nEmail: admin@gmail.com");
+        alert.showAndWait();
+    }
+    */
 }
+

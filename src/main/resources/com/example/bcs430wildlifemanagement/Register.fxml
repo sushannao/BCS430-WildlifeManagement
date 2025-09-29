@@ -75,9 +75,9 @@
                                <Font size="24.0" />
                            </font>
                        </Button>
-                       <Label fx:id="errorLabel" alignment="CENTER" layoutX="223.0" layoutY="457.0" prefHeight="35.0" prefWidth="356.0" textAlignment="CENTER" textFill="#f24949">
+                       <Label fx:id="errorLabel" alignment="CENTER" layoutX="117.0" layoutY="457.0" prefHeight="35.0" prefWidth="547.0" textAlignment="CENTER" textFill="#f24949">
                            <font>
-                               <Font size="24.0" />
+                               <Font size="18.0" />
                            </font>
                        </Label>
                        <Text layoutX="230.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already A Member? Click Here to Login.">
