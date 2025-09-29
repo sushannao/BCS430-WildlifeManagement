@@ -145,7 +145,7 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Hyperlink fx:id="contactUsHyperlink" layoutX="1079.0" layoutY="35.0" prefHeight="26.0" prefWidth="81.0" text="Contact Us" textFill="#f8f5f5">
+                        <Hyperlink fx:id="contactUsHyperlink" layoutX="1079.0" layoutY="35.0" onAction="#contactAdminPopUp" prefHeight="26.0" prefWidth="81.0" text="Contact Us" textFill="#f8f5f5">
                             <font>
                                 <Font size="14.0" />
                             </font>

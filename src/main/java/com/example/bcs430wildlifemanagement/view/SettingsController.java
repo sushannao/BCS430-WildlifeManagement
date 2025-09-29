@@ -271,13 +271,12 @@ public class SettingsController {
         }
     }
 
-    /* @FXML private void contactAdminPopUp(ActionEvent event) { //not needed right now
+    @FXML private void contactAdminPopUp(ActionEvent event) { //not needed right now
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Your profile not updating?");
-        alert.setHeaderText("Try Again! If it still doesn't work, Contact Admin.");
+        alert.setTitle("Need Help?");
+        alert.setHeaderText("If You Need Help, Contact Admin.");
         alert.setContentText("Name: Admin Suzie \nPhone Number: 123.456.7890 \nEmail: admin@gmail.com");
         alert.showAndWait();
     }
-    */
 }
 
