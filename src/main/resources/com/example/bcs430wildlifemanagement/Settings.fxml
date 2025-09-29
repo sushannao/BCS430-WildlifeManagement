@@ -108,18 +108,24 @@
                 </Pane>
             </top>
             <left>
-                <Pane prefHeight="340.0" prefWidth="115.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER" />
+                <Pane prefHeight="340.0" prefWidth="115.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fx:id="imageLeft" fitHeight="529.0" fitWidth="120.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Images/bird.png" />
+                            </image>
+                        </ImageView>
+                    </children></Pane>
             </left>
             <right>
                 <Pane prefHeight="340.0" prefWidth="115.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
                     <children>
                         <ImageView fx:id="imageRight" fitHeight="529.0" fitWidth="120.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@Images/panda.jpg" />
+                                <Image url="@Images/bird.png" />
                             </image>
                         </ImageView>
                     </children></Pane>
-
             </right>
             <bottom>
                 <Pane prefHeight="96.0" prefWidth="1280.0" style="-fx-background-color: #4f7942;" BorderPane.alignment="CENTER">
