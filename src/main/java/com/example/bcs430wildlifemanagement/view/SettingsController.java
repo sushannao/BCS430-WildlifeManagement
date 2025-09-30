@@ -41,7 +41,7 @@ public class SettingsController {
     @FXML private PasswordField newPasswordField;
     @FXML private PasswordField confirmNewPasswordField;
 
-    // getting the uid from user session after login
+    // getting the uid and idtoken from user session after login
     String uid = UserSession.getUid();
     String idToken = UserSession.getIdToken();
 
@@ -202,7 +202,6 @@ public class SettingsController {
             return;
         }
 
-        String idToken = UserSession.getIdToken();
         if (idToken == null) {
             errorLabel.setText("Current password is incorrect.");
             return;
