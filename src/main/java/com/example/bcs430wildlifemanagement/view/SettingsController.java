@@ -21,8 +21,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-import static com.example.bcs430wildlifemanagement.model.UserSession.getIdToken;
-
 
 public class SettingsController {
     @FXML private TextField emailField;
