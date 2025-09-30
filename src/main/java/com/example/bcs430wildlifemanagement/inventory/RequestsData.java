@@ -26,40 +26,39 @@ public class RequestsData {
     private RequestsData() {
         listen();
     }
-
+    // listens for changes
     private void listen() {
         try {
             Firestore db = FirestoreContext.firebase();
-            reg = db.collection("resupplyRequests").orderBy("Timestamp: ", Query.Direction.DESCENDING).addSnapshotListener((snap, error) -> {
+            reg = db.collection("resupplyRequests").orderBy("Timestamp: ", Query.Direction.DESCENDING).addSnapshotListener((snap, error) -> { // order by timestamp
                 if (error != null || snap == null) return;
                 List <ResupplyRequest> fresh = new ArrayList<>();
                 for (DocumentSnapshot doc : snap.getDocuments()) {
                     try{
                         Timestamp time = doc.getTimestamp("created");
                         if (time == null) time = doc.getTimestamp("Timestamp: ");
-
+                        // request data gets built
                         fresh.add(new ResupplyRequest(doc.getId(), Objects.toString(doc.get("itemId"), ""), Objects.toString(doc.get("itemName"), ""), toInt(doc.get("quantityRequested"), 0), Objects.toString(doc.get("unit"), ""), Objects.toString(doc.get("notes"), ""), Objects.toString(doc.get("requesterName"), ""), Objects.toString(doc.get("requestedEmail"), ""), time));
                     } catch (Exception ignore) {
                     }
                 }
-                Platform.runLater(() -> requests.setAll(fresh));
+                Platform.runLater(() -> requests.setAll(fresh)); // update list
             });
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public void stop() {
-        if (reg != null) reg.remove();
-    }
+    // lets admin fulfill a resupply request
     public void fulfillRequest(String requestId, String itemId, int qtyToAdd) throws Exception {
         var db = FirestoreContext.firebase();
-        var reqRef = db.collection("resupplyRequests").document(requestId);
+        var reqRef = db.collection("resupplyRequests").document(requestId); // going to keep this for status updates (complete, pending, denied)
         if (itemId != null && !itemId.isBlank()) {
             var invRef = db.collection("inventory").document(itemId);
             db.batch().update(invRef, "quantity", FieldValue.increment(qtyToAdd)).commit().get();
         }
 
     }
+    // converts an object to an integer
     private int toInt(Object o, int def) {
         try {
             if (o == null) return def;

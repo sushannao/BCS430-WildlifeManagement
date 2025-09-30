@@ -2,17 +2,19 @@ package com.example.bcs430wildlifemanagement.inventory;
 
 public class InventoryItem {
     public enum Category {
-        Food, Medicine, Cleaning, Equipment, Misc
+        Food, Medicine, Cleaning, Equipment, Misc // cateory fields
     }
+    // saved fields
     private String name;
     private int quantity;
     private Category category;
-    private int lowStock; // if the quantity goes below the assigneed number then it will be considered low stock
-    private String unit;
+    private int lowStock; // "low stock" means when the quantity is less than the assigned number, then it would be considered low stock
+    private String unit; // lbs/bags/etc
     private String location;
     private String notes;
-    private String id;
+    private String id; // id fore the firebase database
 
+    // constructor
     public InventoryItem(String name, Category category, int quantity, int lowStock, String unit, String location, String notes) {
         this.name = name;
         this.category = category;
@@ -22,6 +24,7 @@ public class InventoryItem {
         this.location = location;
         this.notes = notes;
     }
+    // getters and setters
     public String getName() {
         return name;
     }

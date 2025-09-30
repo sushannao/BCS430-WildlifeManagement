@@ -4,6 +4,7 @@ import com.google.cloud.Timestamp;
 import java.util.Objects;
 
 public class ResupplyRequest {
+    // request fields
     private String id;
     private String itemId;
     private String itemName;
@@ -17,6 +18,7 @@ public class ResupplyRequest {
     public ResupplyRequest() {
 
     }
+    // constructor
     public ResupplyRequest(String id, String itemId, String itemName, int quantityRequested, String unit, String notes, String requesterName, String requestedEmail, Timestamp created) {
         this.id = id;
         this.itemId = itemId;
@@ -28,7 +30,7 @@ public class ResupplyRequest {
         this.requestedEmail = requestedEmail;
         this.created = created;
     }
-
+    // getters
     public String getId() {
         return id;
     }

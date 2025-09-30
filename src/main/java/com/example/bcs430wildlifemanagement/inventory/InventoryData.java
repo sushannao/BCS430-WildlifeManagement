@@ -7,7 +7,9 @@ import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.DocumentSnapshot;
 
 public class InventoryData {
+    // gets an instance of thei nventory
     private static final InventoryData INSTANCE = new InventoryData();
+    // lists for the ui
     private final ObservableList<InventoryItem> items = FXCollections.observableArrayList();
     private final ObservableList<InventoryItem> requests = FXCollections.observableArrayList();
 
@@ -20,15 +22,15 @@ public class InventoryData {
     public ObservableList<InventoryItem> getItems() {
         return items;
     }
-    public ObservableList<InventoryItem> getRequests() {
+    /*public ObservableList<InventoryItem> getRequests() {
         return requests;
     }
     public void requestRestock(InventoryItem item) {
         if (item != null && !requests.contains(item)) {
             requests.add(item);
         }
-    }
-    // changed to actually read from firebase
+    }*/
+    // reads the inventory from firebase database
     private void readInventory() {
         new Thread(() -> {
             try {
@@ -37,6 +39,7 @@ public class InventoryData {
                 var fresh = new java.util.ArrayList<InventoryItem>();
                 for (DocumentSnapshot doc : snap.getDocuments()) {
                     try {
+                        // adds the data in the database to the inventory
                         String name = java.util.Objects.toString(doc.get("name"), doc.getId());
                         String catStr = java.util.Objects.toString(doc.get("category"), "");
                         InventoryItem.Category category = parseCategory(catStr);
@@ -52,7 +55,7 @@ public class InventoryData {
                         System.err.println("error");
                     }
                 }
-                javafx.application.Platform.runLater(() -> items.setAll(fresh));
+                javafx.application.Platform.runLater(() -> items.setAll(fresh)); // refresh the inventory table
             } catch (Exception e) {
                 javafx.application.Platform.runLater(() ->
                         new javafx.scene.control.Alert(
@@ -60,6 +63,7 @@ public class InventoryData {
             }
         }, "inv").start();
     }
+    // converts an object to an integer
     private static int toInt(Object o, int def) {
         try {
             if (o == null) return def;
@@ -69,6 +73,7 @@ public class InventoryData {
             return def;
         }
     }
+    // converts a string to a category
     private static InventoryItem.Category parseCategory(String s) {
         if (s == null) throw new IllegalArgumentException("no category");
         for (InventoryItem.Category c : InventoryItem.Category.values()) {

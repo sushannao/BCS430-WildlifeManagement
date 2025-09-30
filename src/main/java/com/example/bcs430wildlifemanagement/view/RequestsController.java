@@ -11,6 +11,7 @@ import com.example.bcs430wildlifemanagement.model.App;
 
 public class RequestsController {
     private final RequestsData data = RequestsData.getInstance();
+    // table and columns
     @FXML
     private TableView<ResupplyRequest> table;
     @FXML
@@ -28,6 +29,7 @@ public class RequestsController {
     @FXML
     private TableColumn<ResupplyRequest, String> createdColumn;
 
+    // loads the table
     @FXML
     public void initialize() {
         table.setItems(data.getRequests());
@@ -40,11 +42,12 @@ public class RequestsController {
         createdColumn.setCellValueFactory(c -> new SimpleStringProperty(formatTime(c.getValue().getCreated())));
         table.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
-
+    // formats the timestmap
     private String formatTime(Timestamp time) {
         return time == null ? "": time.toDate().toString();
     }
 
+    // button to fulfill a request
     @FXML
     private void fulfillRequest() {
         ResupplyRequest request = table.getSelectionModel().getSelectedItem();
@@ -52,7 +55,7 @@ public class RequestsController {
             showInfo("No request selected");
             return;
         }
-        TextInputDialog dialog = new TextInputDialog(String.valueOf(request.getQuantityRequested()));
+        TextInputDialog dialog = new TextInputDialog(String.valueOf(request.getQuantityRequested())); // default value is the requested one
         dialog.setTitle("Fulfill Request");
         dialog.setHeaderText("How many " + request.getItemName() + " do you need?");
         dialog.setContentText("Quantity: ");
@@ -68,13 +71,14 @@ public class RequestsController {
             return;
         }
         try {
-            data.fulfillRequest(request.getId(), request.getItemId(), add);
+            data.fulfillRequest(request.getId(), request.getItemId(), add); // updates the inventory and adds the quantity to the firebase
             showInfo("Request fulfilled");
         } catch (Exception e) {
             error(e.getMessage());
         }
     }
 
+    // back button to return to admin
     @FXML
     private void backToAdmin() {
         try {
@@ -84,6 +88,7 @@ public class RequestsController {
         }
     }
 
+    // alert helpers
     private void showInfo(String message) {
         new Alert(Alert.AlertType.INFORMATION, message, ButtonType.OK).showAndWait();
     }
