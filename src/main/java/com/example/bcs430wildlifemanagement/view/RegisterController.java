@@ -23,26 +23,17 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class RegisterController {
-    @FXML
-    private TextField emailField;
-    @FXML
-    private PasswordField passwordField;
-    @FXML
-    private PasswordField confirmPasswordField;
-    @FXML
-    private Label errorLabel;
-    @FXML
-    private TextField confirmEmailField;
-    @FXML
-    private TextField fNameField;
-    @FXML
-    private TextField lNameField;
-    @FXML
-    private TextField phoneNumField;
-    @FXML
-    private ComboBox<String> roleBox;
+    @FXML private TextField emailField;
+    @FXML private PasswordField passwordField;
+    @FXML private PasswordField confirmPasswordField;
+    @FXML private Label errorLabel;
+    @FXML private TextField confirmEmailField;
+    @FXML private TextField fNameField;
+    @FXML private TextField lNameField;
+    @FXML private TextField phoneNumField;
+    @FXML private ComboBox<String> roleBox;
 
-
+    // this method allows all information to be saved into registerUser when the button is clicked
     public void registerButton(ActionEvent actionEvent) {
         String email = emailField.getText();
         String password = passwordField.getText();
@@ -77,6 +68,7 @@ public class RegisterController {
         App.setRoot("/com/example/bcs430wildlifemanagement/Login.fxml");
     }
 
+    // this is the AdminSDK authentication, and saves extra information in a map after registering
     private void registerUser(String email, String password, String fName, String lName, String phoneNum, String role) {
         try {
             UserRecord.CreateRequest request = new UserRecord.CreateRequest().setEmail(email).setPassword(password);
@@ -104,8 +96,8 @@ public class RegisterController {
         }
     }
 
-    @FXML
-    private void initialize() {
+    // this is for the drop box role choices
+    @FXML private void initialize() {
         roleBox.getItems().addAll("Employee", "Admin");
     }
 }

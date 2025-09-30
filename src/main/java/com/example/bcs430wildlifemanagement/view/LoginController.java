@@ -22,14 +22,13 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class LoginController {
-    @FXML
-    private TextField emailField;
-    @FXML
-    private PasswordField passwordField;
-    @FXML
-    private Label errorLabel;
+    @FXML private TextField emailField;
+    @FXML private PasswordField passwordField;
+    @FXML private Label errorLabel;
     private String uid;
+    private String idToken;
 
+    // these methods are to get the apiKey from our config.properties file
     public static String getApiKey() {
         Properties prop = new Properties();
         try {
@@ -41,9 +40,9 @@ public class LoginController {
             return null;
         }
     }
-
     private static final String apiKey = getApiKey();
 
+    // this method gets, if the authenticateuser method is successful, the user session Id and email
     public void loginButton(ActionEvent actionEvent) throws IOException {
         String email = emailField.getText().trim();
         String password = passwordField.getText().trim();
@@ -58,6 +57,7 @@ public class LoginController {
             if (success) {
                 UserSession.setEmail(email);
                 UserSession.setUid(uid);
+                UserSession.setIdToken(idToken);
                 System.out.println("Login successful!");
                 App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
             } else {
@@ -69,10 +69,12 @@ public class LoginController {
         }
     }
 
+    // register button usage
     public void registerPageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Register.fxml");
     }
 
+    // this method uses Http connection to connect to our database and authenticate our users email and password
     private boolean authenticateUser(String email, String password) {
         try {
             URL url = new URL("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiKey);
@@ -92,26 +94,25 @@ public class LoginController {
                 os.write(input, 0, input.length);
             }
 
-            int code = conn.getResponseCode();
-
+            // this gets a error response code to be used
+            int responseCode = conn.getResponseCode();
             Scanner scanner;
-            if (code == 200) {
+            if (responseCode == 200) {
                 scanner = new Scanner(conn.getInputStream(), "utf-8");
             } else {
                 scanner = new Scanner(conn.getErrorStream(), "utf-8");
             }
-
             StringBuilder response = new StringBuilder();
             while (scanner.hasNextLine()) {
                 response.append(scanner.nextLine());
             }
             scanner.close();
-
             System.out.println("Login response: " + response.toString());
 
-            if (code == 200) {
+            // this uses Json Object to recieve the json file of the user in session so we could save their idtoken and uid
+            if (responseCode == 200) {
                 JsonObject obj = JsonParser.parseString(response.toString()).getAsJsonObject();
-                String idToken = obj.get("idToken").getAsString();
+                this.idToken = obj.get("idToken").getAsString();
                 FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(idToken);
                 this.uid = decodedToken.getUid();
                 return true;
@@ -125,13 +126,13 @@ public class LoginController {
         }
         return false;
     }
-    @FXML
-    private void contactAdminPopUp(ActionEvent event) {
+
+    // this method allows a popup message when clicked contact us
+    @FXML private void contactAdminPopUp(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Forgot Password?");
         alert.setHeaderText("If You Forgot Your Password, Contact Admin.");
         alert.setContentText("Name: Admin Suzie \nPhone Number: 123.456.7890 \nEmail: admin@gmail.com");
         alert.showAndWait();
     }
-
 }

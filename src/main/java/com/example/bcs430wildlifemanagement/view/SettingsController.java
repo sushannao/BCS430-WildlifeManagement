@@ -21,6 +21,8 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
+import static com.example.bcs430wildlifemanagement.model.UserSession.getIdToken;
+
 
 public class SettingsController {
     @FXML private TextField emailField;
@@ -41,8 +43,11 @@ public class SettingsController {
     @FXML private PasswordField newPasswordField;
     @FXML private PasswordField confirmNewPasswordField;
 
+    // getting the uid from user session after login
     String uid = UserSession.getUid();
+    String idToken = UserSession.getIdToken();
 
+    // all action buttons from the menu navigation
     public void homePageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
     }
@@ -59,6 +64,7 @@ public class SettingsController {
         App.setRoot("/com/example/bcs430wildlifemanagement/Login.fxml");
     }
 
+    // these 2 methods allows firebase to get a document reference to display data by prompting the text fields
     @FXML public void initialize() {
         displayUserData();
     }
@@ -102,6 +108,7 @@ public class SettingsController {
         }
     }
 
+    // this method updates the database from users, and also recieves email from firebase auth to update
     public void updateProfileButton(ActionEvent actionEvent) throws IOException, FirebaseAuthException {
         String newEmail = emailField.getText();
         String newPhoneNum = phoneNumField.getText();
@@ -135,6 +142,7 @@ public class SettingsController {
         }
     }
 
+    // this method updates the availability fields and updates the database
     public void updateAvailButton(ActionEvent actionEvent) throws IOException {
         String sunday = sundayField.getText();
         String monday = mondayField.getText();
@@ -166,49 +174,22 @@ public class SettingsController {
         }
     }
 
-    public static String getIdToken (String email, String password) throws IOException {
-        URL url = new URL("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiKey);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-        conn.setRequestMethod("POST");
-        conn.setRequestProperty("Content-Type", "application/json");
-        conn.setDoOutput(true);
-
-        String jsonInputString = String.format(
-                "{\"email\":\"%s\",\"password\":\"%s\",\"returnSecureToken\":true}",
-                email, password
-        );
-
-        try (OutputStream os = conn.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
-        }
-        if (conn.getResponseCode() == 200) {
-            try (InputStream is = conn.getInputStream();
-                 InputStreamReader isr = new InputStreamReader(is, "utf-8");
-                 BufferedReader br = new BufferedReader(isr)) {
-
-                StringBuilder response = new StringBuilder();
-                String line;
-                     while ((line = br.readLine()) != null) {
-                    response.append(line);
-                }
-                JsonObject obj = JsonParser.parseString(response.toString()).getAsJsonObject();
-                return obj.get("idToken").getAsString();
-            }
-        } else {
-            try (InputStream is = conn.getErrorStream();
-                 Scanner scanner = new Scanner(is, "utf-8")) {
-                StringBuilder error = new StringBuilder();
-                while (scanner.hasNextLine()) {
-                    error.append(scanner.nextLine());
-                }
-                System.out.println("Error" + error);
-            }
+    // getting the apikey
+    public static String getApiKey() {
+        Properties prop = new Properties();
+        try {
+            FileInputStream fileInput = new FileInputStream("config.properties");
+            prop.load(fileInput);
+            System.out.println(prop.getProperty("apiKey"));
+            return prop.getProperty("apiKey");
+        } catch (IOException e) {
+            e.printStackTrace();
             return null;
         }
     }
+    private static final String apiKey = getApiKey();
 
+    // this method checks the current and new passwords with the user idtoken
     public void changePasswordButton(ActionEvent actionEvent) throws IOException {
         String password = currentPasswordField.getText();
         String newPassword = newPasswordField.getText();
@@ -223,9 +204,7 @@ public class SettingsController {
             return;
         }
 
-        String email = UserSession.getEmail();
-        String idToken = getIdToken(email, password);
-
+        String idToken = UserSession.getIdToken();
         if (idToken == null) {
             errorLabel.setText("Current password is incorrect.");
             return;
@@ -234,22 +213,7 @@ public class SettingsController {
         errorLabel.setText("Successful change!");
     }
 
-
-    public static String getApiKey() {
-        Properties prop = new Properties();
-        try {
-            FileInputStream fileInput = new FileInputStream("config.properties");
-            prop.load(fileInput);
-            System.out.println(prop.getProperty("apiKey"));
-            return prop.getProperty("apiKey");
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private static final String apiKey = getApiKey();
-
+    // this method uses Http connection to change the firebase auth password for users
     public void changePassword(String idToken, String newPassword) throws IOException {
         URL url = new URL("https://identitytoolkit.googleapis.com/v1/accounts:update?key=" + apiKey);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -262,15 +226,16 @@ public class SettingsController {
             byte[] input = jsonInputString.getBytes("utf-8");
             os.write(input, 0, input.length);
         }
-
-        if (conn.getResponseCode() == 200) {
+        int responseCode = conn.getResponseCode();
+        if (responseCode == 200) {
             System.out.println("Password changed successfully.");
         } else {
             System.out.println("Failed to change password.");
         }
     }
 
-    @FXML private void contactAdminPopUp(ActionEvent event) { //not needed right now
+    // this method allows a popup message when clicked contact us
+    @FXML private void contactAdminPopUp(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Need Help?");
         alert.setHeaderText("If You Need Help, Contact Admin.");
