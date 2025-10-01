@@ -2,6 +2,7 @@ package com.example.bcs430wildlifemanagement.view;
 
 import com.example.bcs430wildlifemanagement.model.App;
 import com.example.bcs430wildlifemanagement.model.FirestoreContext;
+import com.example.bcs430wildlifemanagement.model.UserSession;
 import com.google.cloud.firestore.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.UserRecord;
@@ -32,6 +33,9 @@ public class RegisterController {
     @FXML private TextField lNameField;
     @FXML private TextField phoneNumField;
     @FXML private ComboBox<String> roleBox;
+
+    private String fName;
+    private String lName;
 
     // this method allows all information to be saved into registerUser when the button is clicked
     public void registerButton(ActionEvent actionEvent) {

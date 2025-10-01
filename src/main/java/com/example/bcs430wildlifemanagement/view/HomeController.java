@@ -12,10 +12,10 @@ import java.io.IOException;
 public class HomeController {
     @FXML private Label welcomeLabel;
 
-    @FXML
-    public void initialize() {
-        String username = UserSession.getUsername();
-        welcomeLabel.setText("Welcome " + username + "!");
+    // displaying user's first name after login
+    @FXML public void initialize() {
+        String fName = UserSession.getFName();
+        welcomeLabel.setText("Welcome " + fName + "!");
     }
 
     public void HomePageButton(ActionEvent actionEvent) throws IOException {
