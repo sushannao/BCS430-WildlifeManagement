@@ -132,8 +132,8 @@ public class SettingsController {
 
         try {
             reference.update(update).get();
-            System.out.println("Update Successful.");
-            errorLabel.setText("Update Successful!");
+            System.out.println("Profile Updated Successfully.");
+            errorLabel.setText("Profile Updated Successfully!");
         } catch (Exception e) {
             e.printStackTrace();
             errorLabel.setText("Update Failed. Try again or contact Admin.");
@@ -164,8 +164,8 @@ public class SettingsController {
 
         try {
             reference.update(update).get();
-            System.out.println("Update Successful.");
-            errorLabel.setText("Update Successful!");
+            System.out.println("Availability Updated Successfully.");
+            errorLabel.setText("Availability Updated Successfully!");
         } catch (Exception e) {
             e.printStackTrace();
             errorLabel.setText("Update Failed. Try again or contact Admin.");

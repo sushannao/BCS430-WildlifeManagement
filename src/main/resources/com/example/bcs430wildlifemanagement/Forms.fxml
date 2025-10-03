@@ -99,18 +99,18 @@
             </Pane>
         </top>
         <left>
-            <Pane prefHeight="484.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="340.0" prefWidth="115.0" BorderPane.alignment="CENTER">
                 <children>
-                    <ImageView fitHeight="526.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fitHeight="555.0" fitWidth="122.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@Images/Crop%20Black%20Howler%20Monkey.jpg" />
+                            <Image url="@Images/King%20Vulture%20-%20Crop.jpg" />
                         </image>
                     </ImageView>
                 </children>
             </Pane>
         </left>
         <center>
-            <Pane prefHeight="526.0" prefWidth="859.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="666.0" prefWidth="1328.0" BorderPane.alignment="CENTER">
             <children>
                <Button fx:id="viewInventoryButton" layoutX="14.0" layoutY="66.0" mnemonicParsing="false" onAction="#ViewInventoryPageButton" prefHeight="37.0" prefWidth="147.0" text="View Inventory">
                   <font>
@@ -126,11 +126,11 @@
             </Pane>
         </center>
         <right>
-            <Pane prefHeight="526.0" prefWidth="193.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="526.0" prefWidth="115.0" BorderPane.alignment="CENTER">
                 <children>
-                    <ImageView fitHeight="526.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fitHeight="529.0" fitWidth="120.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@Images/Crop%20Black%20Howler%20Monkey.jpg" />
+                            <Image url="@Images/King%20Vulture%20-%20Crop.jpg" />
                         </image>
                     </ImageView>
                 </children></Pane>

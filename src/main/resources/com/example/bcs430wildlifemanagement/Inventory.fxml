@@ -103,9 +103,9 @@
            </Pane>
        </top>
       <left>
-         <Pane prefHeight="484.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="340.0" prefWidth="115.0" BorderPane.alignment="CENTER">
             <children>
-               <ImageView fitHeight="526.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="555.0" fitWidth="122.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Images/Crop%20Black%20Howler%20Monkey.jpg" />
                   </image>
@@ -114,14 +114,14 @@
          </Pane>
       </left>
       <center>
-         <Pane prefHeight="526.0" prefWidth="859.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="666.0" prefWidth="1328.0" BorderPane.alignment="CENTER">
             <children>
             
-                      <VBox layoutX="-5.0" prefHeight="525.0" prefWidth="890.0" spacing="8">
+                      <VBox layoutX="7.0" prefHeight="525.0" prefWidth="1042.0" spacing="8">
             
                           <Label text="Inventory" />
             
-                          <TableView fx:id="table" prefHeight="468.0" prefWidth="873.0" VBox.vgrow="ALWAYS">
+                          <TableView fx:id="table" prefHeight="467.0" prefWidth="1034.0" VBox.vgrow="ALWAYS">
                         <columns>
                             <TableColumn fx:id="nameColumn" text="Name" />
                             <TableColumn fx:id="categoryColumn" text="Category" />
@@ -140,9 +140,9 @@
          </Pane>
       </center>
       <right>
-         <Pane prefHeight="526.0" prefWidth="193.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="340.0" prefWidth="115.0" BorderPane.alignment="CENTER">
             <children>
-               <ImageView fitHeight="526.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="529.0" fitWidth="120.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Images/Crop%20Black%20Howler%20Monkey.jpg" />
                   </image>
