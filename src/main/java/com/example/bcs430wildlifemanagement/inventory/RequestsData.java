@@ -30,7 +30,7 @@ public class RequestsData {
     private void listen() {
         try {
             Firestore db = FirestoreContext.firebase();
-            reg = db.collection("resupplyRequests").orderBy("Timestamp: ", Query.Direction.DESCENDING).addSnapshotListener((snap, error) -> { // order by timestamp
+            reg = db.collection("resupplyRequests").addSnapshotListener((snap, error) -> {
                 if (error != null || snap == null) return;
                 List <ResupplyRequest> fresh = new ArrayList<>();
                 for (DocumentSnapshot doc : snap.getDocuments()) {
