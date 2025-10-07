@@ -65,39 +65,45 @@
                    </ImageView>
                    <Text fill="WHITE" layoutX="1128.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" wrappingWidth="66.0">
                        <font>
-                           <Font name="System Bold" size="27.0" />
+                           <Font name="System Bold" size="24.0" />
                        </font>
                    </Text>
-                   <Button layoutX="178.0" layoutY="47.0" mnemonicParsing="false" onAction="#HomePageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
+                   <Button layoutX="154.0" layoutY="47.0" mnemonicParsing="false" onAction="#HomePageButton" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
                        <font>
-                           <Font name="System Bold" size="24.0" />
+                           <Font name="System Bold" size="18.0" />
                        </font></Button>
-                   <Button layoutX="308.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Animals" textFill="WHITE">
+                   <Button layoutX="272.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Animals" textFill="WHITE">
                        <font>
-                           <Font name="System Bold" size="24.0" />
+                           <Font name="System Bold" size="18.0" />
                        </font></Button>
-                   <Button layoutX="438.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Events" textFill="WHITE">
+                   <Button layoutX="744.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Events" textFill="WHITE">
                        <font>
-                           <Font name="System Bold" size="24.0" />
+                           <Font name="System Bold" size="18.0" />
                        </font></Button>
-                   <Button layoutX="568.0" layoutY="47.0" mnemonicParsing="false" onAction="#FormsPageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Forms" textFill="WHITE">
+                   <Button layoutX="390.0" layoutY="47.0" mnemonicParsing="false" onAction="#FormsPageButton" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Resources" textFill="WHITE">
                        <font>
-                           <Font name="System Bold" size="24.0" />
+                           <Font name="System Bold" size="18.0" />
                        </font></Button>
-                   <Button layoutX="698.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Map" textFill="WHITE">
+                   <Button layoutX="508.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Map" textFill="WHITE">
                        <font>
-                           <Font name="System Bold" size="24.0" />
+                           <Font name="System Bold" size="18.0" />
                        </font></Button>
-                   <Button layoutX="828.0" layoutY="47.0" mnemonicParsing="false" onAction="#AdminPageButton" prefHeight="52.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
+                   <Button layoutX="980.0" layoutY="47.0" mnemonicParsing="false" onAction="#AdminPageButton" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Admin" textFill="WHITE">
                        <font>
-                           <Font name="System Bold" size="24.0" />
+                           <Font name="System Bold" size="18.0" />
                        </font></Button>
-                   <Button layoutX="958.0" layoutY="47.0" mnemonicParsing="false" onAction="#SettingsPageButton" prefHeight="52.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
+                   <Button layoutX="1121.0" layoutY="7.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="154.0" text="User" textFill="WHITE" />
+                   <Button layoutX="862.0" layoutY="47.0" mnemonicParsing="false" onAction="#SettingsPageButton" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transprent;" text="Settings" textFill="WHITE">
                        <font>
-                           <Font name="System Bold" size="24.0" />
+                           <Font name="System Bold" size="18.0" />
                        </font>
                    </Button>
-                   <Button layoutX="1121.0" layoutY="7.0" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="154.0" text="User" textFill="WHITE" />
+                   <Button layoutX="626.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Scheduling" textFill="WHITE">
+                       <font>
+                           <Font name="System Bold" size="18.0" />
+                       </font>
+                   </Button>
+
 
                </children>
            </Pane>
