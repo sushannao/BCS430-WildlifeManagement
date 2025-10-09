@@ -265,6 +265,7 @@
                             </children>
                         </GridPane>
                         <ImageView fitHeight="260.0" fitWidth="295.0" layoutX="751.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="848.0" layoutY="487.0" mnemonicParsing="false" text="Request Update" />
                     </children></Pane>
 
             </center>
