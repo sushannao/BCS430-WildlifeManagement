@@ -68,7 +68,7 @@
                         <font>
                             <Font name="System Bold" size="18.0" />
                         </font></Button>
-                    <Button layoutX="272.0" layoutY="47.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Animals" textFill="WHITE">
+                    <Button layoutX="272.0" layoutY="47.0" mnemonicParsing="false" onAction="#AnimalsPageButton" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Animals" textFill="WHITE">
                         <font>
                             <Font name="System Bold" size="18.0" />
                         </font></Button>
@@ -118,12 +118,17 @@
         <center>
             <Pane prefHeight="666.0" prefWidth="1328.0" BorderPane.alignment="CENTER">
             <children>
-               <Button fx:id="viewInventoryButton" layoutX="14.0" layoutY="66.0" mnemonicParsing="false" onAction="#ViewInventoryPageButton" prefHeight="37.0" prefWidth="147.0" text="View Inventory">
+               <Button fx:id="viewInventoryButton" layoutX="14.0" layoutY="116.0" mnemonicParsing="false" onAction="#ViewInventoryPageButton" prefHeight="39.0" prefWidth="201.0" text="View Inventory">
                   <font>
                      <Font size="18.0" />
                   </font>
                </Button>
-               <Button fx:id="incidentReportButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" text="Incident Form">
+               <Button fx:id="incidentReportButton" layoutX="14.0" layoutY="65.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="201.0" text="Incident Form">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Button>
+               <Button fx:id="EmployeeContactListPageButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#EmployeeContactListPageButton" prefHeight="39.0" prefWidth="201.0" text="Employee Contact List">
                   <font>
                      <Font size="18.0" />
                   </font>

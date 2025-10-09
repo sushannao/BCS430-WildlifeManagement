@@ -46,16 +46,19 @@ public class SettingsController {
     String idToken = UserSession.getIdToken();
 
     // all action buttons from the menu navigation
-    public void homePageButton(ActionEvent actionEvent) throws IOException {
+    public void HomePageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
     }
-    public void formsPageButton(ActionEvent actionEvent) throws IOException {
+    public void AnimalsPageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/Animals.fxml");
+    }
+    public void FormsPageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Forms.fxml");
     }
-    public void adminPageButton(ActionEvent actionEvent) throws IOException {
+    public void AdminPageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Admin.fxml");
     }
-    public void settingsPageButton(ActionEvent actionEvent) throws IOException {
+    public void SettingsPageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Settings.fxml");
     }
     public void logoutButton(ActionEvent actionEvent) throws IOException {

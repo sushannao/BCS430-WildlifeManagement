@@ -187,6 +187,10 @@ public class InventoryController {
         App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
     }
 
+    public void AnimalsPageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/Animals.fxml");
+    }
+
     public void FormsPageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Forms.fxml");
     }

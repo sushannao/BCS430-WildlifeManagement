@@ -30,6 +30,10 @@ public class AdminController {
         App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
     }
 
+    public void AnimalsPageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/Animals.fxml");
+    }
+
     public void FormsPageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Forms.fxml");
     }
@@ -40,6 +44,14 @@ public class AdminController {
 
     public void SettingsPageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Settings.fxml");
+    }
+
+    public void EmployeeManagementPageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/EmployeeManagement.fxml");
+    }
+
+    public void AnimalManagementPageButton(ActionEvent actionEvent) throws IOException {
+        App.setRoot("/com/example/bcs430wildlifemanagement/AnimalManagement.fxml");
     }
 
 }
