@@ -25,6 +25,14 @@ public class AdminController {
             new Alert(Alert.AlertType.ERROR, "Failed to open view requests", ButtonType.OK).showAndWait();
         }
     }
+    @FXML
+    private void contactAdminPopUp(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Need Help?");
+        alert.setHeaderText("If You Need Help, Contact Admin.");
+        alert.setContentText("Name: Admin Suzie \nPhone Number: 123.456.7890 \nEmail: admin@gmail.com");
+        alert.showAndWait();
+    }
 
     public void HomePageButton(ActionEvent actionEvent) throws IOException {
         App.setRoot("/com/example/bcs430wildlifemanagement/Home.fxml");
