@@ -60,6 +60,17 @@ public class RegisterController {
             errorLabel.setText("All fields must be completed!");
             return;
         }
+        if (!fName.matches("[a-zA-Z'-]+")){
+            errorLabel.setText("First name should only contain letters, hyphens, and apostrophes.");
+            return;
+        }if (!lName.matches("[a-zA-Z'-]+")){
+            errorLabel.setText("Last name should only contain letters, hyphens, and apostrophes.");
+            return;
+        }
+        if (!phoneNum.matches("\\d{3}-\\d{3}-\\d{4}")){
+            errorLabel.setText("Please enter your phone number in the correct format.");
+            return;
+        }
         try {
             registerUser(email, password, fName, lName, phoneNum, role);
         } catch (Exception e) {
@@ -79,6 +90,9 @@ public class RegisterController {
 
             UserRecord userInput = FirebaseAuth.getInstance().createUser(request);
             System.out.println("Successfully created new user: " + userInput.getUid());
+
+            fName = fName.substring(0,1).toUpperCase() + fName.substring(1).toLowerCase();
+            lName = lName.substring(0,1).toUpperCase() + lName.substring(1).toLowerCase();
 
             Map<String, Object> userData = new HashMap<>();
             userData.put("firstName", fName);

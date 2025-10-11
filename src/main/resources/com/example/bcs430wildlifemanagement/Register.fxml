@@ -46,6 +46,12 @@
                            </font>
                        </Label>
                        <TextField fx:id="lNameField" alignment="TOP_CENTER" layoutX="319.0" layoutY="157.0" prefHeight="25.0" prefWidth="444.0" promptText="Last Name" />
+                  <Label layoutX="61.0" layoutY="194.0" text="Email Address:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                       <TextField fx:id="emailField" alignment="TOP_CENTER" layoutX="319.0" layoutY="199.0" prefHeight="25.0" prefWidth="444.0" promptText="Email Address" />
                        <Label layoutX="61.0" layoutY="236.0" text="Confirm Email Address:">
                            <font>
                                <Font size="24.0" />
@@ -57,7 +63,7 @@
                                <Font size="24.0" />
                            </font>
                        </Label>
-                       <TextField fx:id="phoneNumField" alignment="TOP_CENTER" layoutX="319.0" layoutY="279.0" prefHeight="25.0" prefWidth="444.0" promptText="Phone Number" />
+                       <TextField fx:id="phoneNumField" alignment="TOP_CENTER" layoutX="319.0" layoutY="279.0" prefHeight="25.0" prefWidth="444.0" promptText="Phone Number (Ex. xxx-xxx-xxxx)" />
                        <Label layoutX="61.0" layoutY="315.0" text="Password:">
                            <font>
                                <Font size="24.0" />
@@ -89,12 +95,6 @@
                                <Font size="24.0" />
                            </font>
                        </Button>
-                  <Label layoutX="61.0" layoutY="194.0" text="Email Address:">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                       <TextField fx:id="emailField" alignment="TOP_CENTER" layoutX="319.0" layoutY="199.0" prefHeight="25.0" prefWidth="444.0" promptText="Email Address" />
                        <ComboBox fx:id="roleBox" layoutX="319.0" layoutY="408.0" prefWidth="444.0" promptText="Select Role" />
                   <Label layoutX="61.0" layoutY="403.0" text="Select Role:">
                      <font>
